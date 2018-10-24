@@ -1,0 +1,340 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>CRYPTOWIZ</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content padding>
+
+    <ion-grid>
+        <ion-row>
+          <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <!-- <ion-item class="abc" text-center> -->
+      <button class="btn1-size" ion-button block default-button text-capitalize box-shadow style="background:#034EB6" >SIMULATOR</button><br>
+      <!-- </ion-item> -->
+      </ion-col>
+      <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <!-- <ion-item class="abc" text-center> -->
+          <ion-searchbar ></ion-searchbar><br>
+          <!-- </ion-item> -->
+      </ion-col>
+      </ion-row>
+
+       
+        <ion-item class="ion-item" style="background-color:#036CDA">
+            <ion-row>
+        <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <div class="label" style="font-size:13px">Price</div>
+            <span class="span" span-medium style="color:white">2x</span>
+        </ion-col>
+        <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <div class="label" style="font-size:13px">Months</div>
+            <span class="span" span-medium style="color:white">2</span>
+        </ion-col>
+        <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <div class="label" style="font-size:13px">Global market</div>
+            <span class="span" span-medium style="color:white">2x</span>
+        </ion-col>
+        <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <div class="label" style="font-size:13px">BTC Share</div>
+            <span class="span" span-medium style="color:white">2%</span>
+        </ion-col>
+         </ion-row>
+        </ion-item><br><br><br><br>
+
+        <ion-row>
+           <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-2 offset-xl-3 col-xl-2>
+
+           </ion-col>
+           <ion-col ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+               <div class="buttonscontainer">
+                 <ion-row>
+                   <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                 <button [ngClass]="buttonclass1" (click)="toggle_click()" >Results</button>
+                 </ion-col>
+                 <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                 <button [ngClass]="buttonclass2" (click)="toggle_click()" >Summary</button>
+                 </ion-col>
+                 </ion-row>
+               </div>
+               
+            </ion-col>
+            <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-2 offset-xl-3 col-xl-2>
+
+              </ion-col>
+
+         </ion-row><br> 
+
+          <!-- :::::::::::::::::::::::::::::: Results :::::::::::::::::::::::::::::::::: -->
+
+        <ion-list *ngIf="show" style=" width:100%">
+
+            <ion-item text-center style="background-color: #033598; font-size: 13px !important">
+           <ion-row>
+             <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+         
+                    <div class="label">Name</div>
+            
+             </ion-col>
+             <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+             
+                <div class="label">Today</div>
+        
+         </ion-col>
+         <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                
+            <div class="label">In 2 months</div>
+      </ion-col>
+           </ion-row>
+          </ion-item>
+      
+          <ion-item text-center>
+              <ion-row>
+                <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            
+                       <div class="label1">Price in USD</div>
+               
+                </ion-col>
+                <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                
+                   <div class="label1">$434.23</div>
+           
+            </ion-col>
+            <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                   
+               <div class="label1">$869.23</div>
+         </ion-col>
+              </ion-row>
+             </ion-item>
+      
+             <ion-item text-center>
+                <ion-row>
+                  <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              
+                         <div class="label1">Price in BTC</div>
+                 
+                  </ion-col>
+                  <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  
+                     <div class="label1">0.06869174</div>
+             
+              </ion-col>
+              <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                     
+                 <div class="label1">0.13698829</div>
+           </ion-col>
+                </ion-row>
+               </ion-item>
+               <ion-item text-center>
+                  <ion-row>
+                    <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                
+                           <div class="label1">Price in BTC</div>
+                   
+                    </ion-col>
+                    <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    
+                       <div class="label1">0.06869174</div>
+               
+                </ion-col>
+                <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                       
+                   <div class="label1">0.13698829</div>
+             </ion-col>
+                  </ion-row>
+                 </ion-item>
+                 <ion-item text-center>
+                    <ion-row>
+                      <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  
+                             <div class="label1">Price in BTC</div>
+                     
+                      </ion-col>
+                      <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                      
+                         <div class="label1">0.06869174</div>
+                 
+                  </ion-col>
+                  <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                         
+                     <div class="label1">0.13698829</div>
+               </ion-col>
+                    </ion-row>
+                   </ion-item>
+      
+      
+        </ion-list>
+        
+       <!-- :::::::::::::::::::::::::::::: Summary :::::::::::::::::::::::::::::::::: -->
+
+       <ion-card class="abc" *ngIf="!show">
+          <ion-row style="background-color:#4EB67C">
+              <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <ion-icon name="bulb-outline" style="font-size:25px; margin:5px;"></ion-icon>
+              </ion-col>
+              <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <ion-card-title text-center style="color:white; margin-right: 40px; font-size: 20px"><b>COMPARISON BTC</b></ion-card-title>
+              </ion-col >
+            </ion-row>
+            <ion-row class="xyz">
+              <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                   
+              </ion-col>
+              
+                  <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <span span-medium style="color:#88C765">Versus</span>
+                  </ion-col>
+                  
+                      <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                           
+                      </ion-col>
+            </ion-row><br>
+            <ion-row>
+                <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <span class="ab" span-medium style="color:#006600">2 X</span><br>
+                    <span class="ab" span-medium style="color:#669933">$108.46</span><br>
+                    <span span-medium style="color:#B0D7B0; font-size: 12px !important">New Value</span>
+                </ion-col>
+                <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <span class="ab" span-medium style="color:#006600">0.3 X</span><br>
+                    <span class="ab" span-medium style="color:#669933">$8,872.46</span><br>
+                    <span span-medium style="color:#B0D7B0; font-size: 12px !important">New Value</span>
+                </ion-col>
+            </ion-row>
+            <hr>
+            <ion-row>
+                <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <span span-medium style="color:#B0D7B0">LTC</span><br>
+                    <span span-medium style="color:#669933; font-size: 10px !important; font-weight: bold !important">Out Performs</span><br>
+                    <span span-medium style="color:#B0D7B0; font-size: 12px !important">BTC By Factor</span>
+                </ion-col>
+                <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    
+                    <h2 class="ab2" style="color:#669933">6.89 X</h2>
+                    
+                </ion-col>
+            </ion-row>
+
+       </ion-card><br>
+        
+       <ion-card class="abc" *ngIf="!show">
+        <ion-row style="background-color:#F16B8B">
+            <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon name="bulb-outline" style="font-size:25px; margin:5px;"></ion-icon>
+            </ion-col>
+            <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-card-title text-center style="color:white; margin-right: 40px"><b>SATOSHI VALUE</b></ion-card-title>
+            </ion-col >
+          </ion-row>
+          <ion-row class="xyz">
+            <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                 
+            </ion-col>
+            
+                <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <span span-medium style="color:#FF9999">:)</span>
+                </ion-col>
+                
+                    <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                         
+                    </ion-col>
+          </ion-row><br>
+          <ion-row>
+              <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <span class="ab" span-medium style="color:#FF9999">0.05881205</span><br>
+                  <span span-medium style="color:#FFB0B0; font-size: 12px !important">New Value</span>
+              </ion-col>
+              <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <span class="ab" span-medium style="color:#FF9999">0.00855476</span><br>
+                  <span span-medium style="color:#FFB0B0; font-size: 12px !important">Current Value</span>
+              </ion-col>
+          </ion-row><br>
+
+     </ion-card><br>
+
+     <ion-card class="abc" *ngIf="!show">
+        <ion-row style="background-color:#008BFF">
+            <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon name="bulb-outline" style="font-size:25px; margin:5px;"></ion-icon>
+            </ion-col>
+            <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-card-title text-center style="color:white; margin-right: 40px"><b>RANK NUMBER</b></ion-card-title>
+            </ion-col >
+          </ion-row>
+          <ion-row class="xyz">
+            <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                 
+            </ion-col>
+            
+                <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <span span-medium style="color:#008BFF">:)</span>
+                </ion-col>
+                
+                    <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                         
+                    </ion-col>
+          </ion-row><br>
+          <ion-row>
+              <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <span class="ab" span-medium style="color:#00A9FF">5 rank</span><br>
+                  <span  span-medium style="color:#16B0FF; font-size: 14px !important">0.79% market share</span><br>
+                  <span span-medium style="color:#16B0FF; font-size: 12px !important">New rank</span>
+              </ion-col>
+              <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <span class="ab" span-medium style="color:#00A9FF">7 rank</span><br>
+                    <span  span-medium style="color:#16B0FF; font-size: 14px !important">1.59% market share</span><br>
+                    <span span-medium style="color:#16B0FF; font-size: 12px !important">Current rank</span>
+              </ion-col>
+          </ion-row><br>
+
+     </ion-card><br>
+
+     <ion-card class="abc" *ngIf="!show">
+            <ion-row style="background-color:#8156A3">
+                <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <ion-icon name="bulb-outline" style="font-size:25px; margin:5px;"></ion-icon>
+                </ion-col>
+                <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <ion-card-title text-center style="color:white; margin-right: 40px; font-size: 20px"><b>GENERAL CHECKS</b></ion-card-title>
+                </ion-col >
+              </ion-row><br>
+              <ion-row>
+                <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                        <ion-icon name="ionic" style="font-size:30px"></ion-icon>
+                </ion-col>
+                
+                    <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                      <span span-medium style="color:#9071B2">LTC grows faster than BTC</span>
+                    </ion-col>
+              </ion-row>
+              <hr>
+              <ion-row>
+                    <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                            <ion-icon name="ionic" style="font-size:30px"></ion-icon>
+                    </ion-col>
+                    
+                        <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                          <span span-medium style="color:#9071B2"> LTC's market share is smaller than BTC's</span>
+                        </ion-col>
+                  </ion-row>
+                  <hr>
+                  <ion-row>
+                        <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                <ion-icon name="ionic" style="font-size:30px"></ion-icon>
+                        </ion-col>
+                        
+                            <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                              <span span-medium style="color:#9071B2">LTC has less than 25% of the ALT market</span>
+                            </ion-col>
+                      </ion-row>
+                      
+              
+    
+         </ion-card>
+
+      </ion-grid>
+
+</ion-content>

@@ -1,0 +1,75 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>CRYPTOWIZ</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <!-- <ion-item class="abc" text-center> -->
+  <button class="btn1-size" ion-button block default-button text-capitalize box-shadow style="background:#8ACD50" >GROWTH CALCULATOR</button><br>
+  <!-- </ion-item> -->
+  </ion-col>
+  <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+      <!-- <ion-item class="abc" text-center> -->
+      <ion-searchbar ></ion-searchbar>
+      <!-- </ion-item> -->
+  </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-card>
+<ion-grid>
+  <ion-row class="abc">
+    <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <ion-card-title text-center style="color:#006622"><b>7</b></ion-card-title>
+      <span span-medium style="color:#A3D28B">Rank</span>
+    </ion-col>
+    <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <ion-card-title text-center style="color:#006622"><b>$54.23</b></ion-card-title>
+      <p style="color:#A3D28B">Price in USD</p>
+    </ion-col>
+    <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <ion-card-title text-center style="color:#006622"><b>$3.16 B</b></ion-card-title>
+      <p style="color:#A3D28B">Market Cop</p>
+    </ion-col>
+  </ion-row>
+  <hr>
+  <hr>
+  <ion-row>
+    <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <ion-card-content style=" font-size: 20px; color:#7ABD58">
+            Enter your growth expectation for this coin. If you think the <b>price</b> will double enter 2 below.
+          </ion-card-content>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-card><br>
+
+<ion-grid>
+  <ion-row>
+      <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <button>
+          <ion-icon name="arrow-dropleft-circle" style=" font-size:50px"></ion-icon>
+          </button>
+      </ion-col>
+    <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <ion-input class="input" text-center required type="number" style="margin-top:10px"></ion-input>
+    </ion-col>
+    <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+      <button (click)="ClickToResultPage()">
+        <ion-icon name="arrow-dropright-circle" style="font-size:50px"></ion-icon>
+        </button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+</ion-content>
