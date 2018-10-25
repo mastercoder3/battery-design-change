@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the GrowthCalculatorResultPage page.
@@ -20,6 +21,9 @@ export class GrowthCalculatorResultPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GrowthCalculatorResultPage');
+  }
+  ClickToHomePage(){
+    this.navCtrl.setRoot(HomePage);
   }
 
 }

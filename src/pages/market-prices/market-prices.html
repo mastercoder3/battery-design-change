@@ -6,16 +6,21 @@
   
   </ion-header>
 
-
+  
 <ion-content>
 
     <ion-grid>
         <ion-row>
-          <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              <!-- <ion-item class="abc" text-center> -->
-      <button class="btn1-size" ion-button block default-button text-capitalize box-shadow style="background:#91357A" >COIN COMPARISON</button><br>
-      <!-- </ion-item> -->
-      </ion-col>
+            <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+              </ion-col>
+              <ion-col ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <button class="btn1-size" ion-button block default-button text-capitalize box-shadow style="background:#91357A" ><b>MARKET PRICES</b></button><br>
+        
+              </ion-col>
+              <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        
+                </ion-col>
       <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           <!-- <ion-item class="abc" text-center> -->
               <div class="lab">Global Market Cap <b>$199,111,600,145</b></div>
@@ -217,5 +222,14 @@
         </ion-list><br>
        
       </ion-grid>
+
+      <ion-fab right bottom>
+          <button ion-fab color="light" style="background-color:#696969"><ion-icon name="add"></ion-icon></button>
+          <ion-fab-list side="top">
+            <button ion-fab (click)="ClickToHomePage()" style="background-color:grey"><ion-icon name="keypad-outline"></ion-icon></button>
+            <button ion-fab style="background-color:grey"><ion-icon name="bulb-outline"></ion-icon></button>
+            
+          </ion-fab-list>
+        </ion-fab>
 
 </ion-content>

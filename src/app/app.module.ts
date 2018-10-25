@@ -17,6 +17,10 @@ import { SimulatorPage } from '../pages/simulator/simulator';
 import { SimulatorResultPage } from '../pages/simulator-result/simulator-result';
 import { CoinComparisonPage } from '../pages/coin-comparison/coin-comparison';
 import { MarketPricesPage } from '../pages/market-prices/market-prices';
+import { AccountPage } from '../pages/account/account';
+import { FaqPage } from '../pages/faq/faq';
+import { ContactPage } from '../pages/contact/contact';
+import { LogoutPage } from '../pages/logout/logout';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { MarketPricesPage } from '../pages/market-prices/market-prices';
     SimulatorPage,
     SimulatorResultPage,
     CoinComparisonPage,
-    MarketPricesPage
+    MarketPricesPage,
+    AccountPage,
+    FaqPage,
+    ContactPage,
+    LogoutPage
   ],
   imports: [
     BrowserModule,
@@ -50,7 +58,11 @@ import { MarketPricesPage } from '../pages/market-prices/market-prices';
     SimulatorPage,
     SimulatorResultPage,
     CoinComparisonPage,
-    MarketPricesPage
+    MarketPricesPage,
+    AccountPage,
+    FaqPage,
+    ContactPage,
+    LogoutPage
   ],
   providers: [
     StatusBar,

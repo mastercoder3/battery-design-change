@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the CoinComparisonPage page.
@@ -20,6 +21,9 @@ export class CoinComparisonPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CoinComparisonPage');
+  }
+  ClickToHomePage(){
+    this.navCtrl.setRoot(HomePage);
   }
 
 }
