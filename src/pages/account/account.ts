@@ -16,6 +16,13 @@ import { HomePage } from '../home/home';
 })
 export class AccountPage {
 
+  buttonclass1 = "custombutton1"
+  buttonclass2 = "custombutton2"
+  buttonclass3 = "custombutton3"
+  buttonclass4 = "custombutton4"
+
+  show=true;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

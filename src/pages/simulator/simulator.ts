@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SimulatorResultPage } from '../simulator-result/simulator-result';
 import { HomePage } from '../home/home';
+import { AccountPage } from '../account/account';
 
 /**
  * Generated class for the SimulatorPage page.
@@ -28,6 +29,9 @@ export class SimulatorPage {
   }
   ClickToHomePage(){
     this.navCtrl.setRoot(HomePage);
+  }
+  clickToAccountPage(){
+    this.navCtrl.setRoot(AccountPage);
   }
 
 }

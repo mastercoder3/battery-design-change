@@ -1,24 +1,70 @@
-<!--
-  Generated template for the FaqPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>FAQ</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>CRYPTOWIZ</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+    <ion-grid>
+        <ion-row>
+          <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+    
+          </ion-col>
+          <ion-col ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <h2 style="font-size:15px"><b>Frequently Ask Questions</b></h2>
+           </ion-col>
+           <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+    
+             </ion-col>
+        </ion-row><br>
+
+        <ion-list>
+            
+            <ul no-margin no-padding class="collapsible">
+              <li no-margin *ngFor="let group of data.items;">
+                <!-- Expandable - Filters Products - Header-->
+                <div class="collapsible-header" no-margin no-padding (click)="toggleGroup(group)">
+                  <ion-item default-item no-lines>
+                    <h4>{{group.title}}</h4>
+                    <ion-icon icon-small item-end>
+                      <i class="icon {{group.icon}}"></i>
+                    </ion-icon>
+                  </ion-item>
+                </div>
+                <!-- End Expandable - Filters Products - Header-->
+                <!-- Expandable - Filters Productsr - Body -->
+                <div class="item-accordion" [ngClass]="{'active': isGroupShown(group) }"
+                [hidden]="!isGroupShown(group)">
+                  <ion-item text-wrap default-item no-lines *ngFor="let item of group.expandItems;"
+                  (tap)="onEvent(item, $event);">
+                  
+                    <p >{{item.title}}</p>
+                    
+                  </ion-item>
+                </div>
+                <!-- End Expandable - Filters Productsr- Body -->
+              </li>
+            </ul>
+          </ion-list>
+        
+      
+
+            
+            
+        </ion-grid>
+
     <ion-fab right bottom>
         <button ion-fab color="light" style="background-color:#696969"><ion-icon name="add"></ion-icon></button>
         <ion-fab-list side="top">
           <button ion-fab (click)="ClickToHomePage()" style="background-color:grey"><ion-icon name="keypad-outline"></ion-icon></button>
-          <button ion-fab style="background-color:grey"><ion-icon name="bulb-outline"></ion-icon></button>
+          <button ion-fab (click)="clickToAccountPage()" style="background-color:grey"><ion-icon name="bulb-outline"></ion-icon></button>
           
         </ion-fab-list>
       </ion-fab>

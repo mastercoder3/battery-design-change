@@ -1,6 +1,9 @@
 <ion-header>
 
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>CRYPTOWIZ</ion-title>
   </ion-navbar>
 
@@ -77,10 +80,10 @@
 </ion-grid>
 
 <ion-fab right bottom>
-    <button ion-fab color="light" style="background-color:#696969"><ion-icon name="add"></ion-icon></button>
+    <button ion-fab color="light" style="background-color:#C0C0C0"><ion-icon name="add"></ion-icon></button>
     <ion-fab-list side="top">
-      <button ion-fab (click)="ClickToHomePage()" style="background-color:grey"><ion-icon name="keypad-outline"></ion-icon></button>
-      <button ion-fab style="background-color:grey"><ion-icon name="bulb-outline"></ion-icon></button>
+      <button ion-fab (click)="ClickToHomePage()" style="background-color:#A9A9A9"><ion-icon name="keypad-outline"></ion-icon></button>
+      <button ion-fab (click)="clickToAccountPage()" style="background-color:#A9A9A9"><ion-icon name="bulb-outline"></ion-icon></button>
       
     </ion-fab-list>
   </ion-fab>
