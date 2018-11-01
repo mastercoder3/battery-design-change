@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { AccountPage } from '../account/account';
+import { ApiServiceProvider } from '../../providers/api-service/api-service';
 
 /**
  * Generated class for the CoinComparisonPage page.
@@ -17,8 +18,45 @@ import { AccountPage } from '../account/account';
 })
 export class CoinComparisonPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  coinComparison;
+  coinComparsionName;
+  
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private api:ApiServiceProvider) {
   }
+
+  ionViewDidEnter(){
+    this.getCoinComparison();
+    
+  }
+
+  ngOnInit(){
+
+  }
+  getCoinComparison(){
+    this.api.getCoinComparison().subscribe( (data) => {
+     this.coinComparison = data
+     console.log("CoinComparison",  this.coinComparison);
+   })
+ }
+ getCoinComparisonName(name){
+  this.api.getCoinComparisonName(name).subscribe( (data) => {
+    this.coinComparsionName = data
+    console.log("CoinComparisonName",  this.coinComparsionName);
+  })
+ }
+ onSearch(event){
+   
+   if(event==""){
+     this.coinComparsionName=null;  
+   }
+   else{
+    this.getCoinComparisonName(event);
+   }
+//  this.name+=event.target.value;
+ console.log(event);
+
+ }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CoinComparisonPage');

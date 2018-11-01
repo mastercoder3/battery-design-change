@@ -12,8 +12,8 @@
   
 <ion-content>
 
-    <ion-grid>
-        <ion-row>
+    <ion-grid *ngIf="marketPricesHead">
+        <ion-row *ngFor="let mkh of marketPricesHead">
             <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
 
               </ion-col>
@@ -26,8 +26,8 @@
                 </ion-col>
       <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           <!-- <ion-item class="abc" text-center> -->
-              <div class="lab">Global Market Cap <b>$199,111,600,145</b></div>
-              <div class="lab">BTC Dominance <b>55.22% Rank</b></div><br>
+              <div class="lab">Global Market Cap <b>{{mkh.gmc}}</b></div>
+              <div class="lab">BTC Dominance <b>{{mkh.btc}}</b></div><br>
           <!-- </ion-item> -->
       </ion-col>
       </ion-row>
@@ -35,7 +35,7 @@
 
     <ion-grid style="width:100%">
 
-      <ion-list style=" width:100%">
+      <ion-list style=" width:100%" *ngIf="marketPrices">
 
           <ion-item  style="background-color: #7B4397; font-size: 13px !important">
          <ion-row>
@@ -64,164 +64,36 @@
          </ion-row>
         </ion-item>
 
-        <ion-item style="font-size: 11px !important">
+        <ion-item style="font-size: 11px !important"  *ngFor="let mk of marketPrices"> 
             <ion-row>
               <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           
-                     <div class="label1">$6,350.11</div>
+                     <div class="label1">{{mk.rank}}</div>
              
               </ion-col>
-              <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+               <ion-icon>{{mk.symbol}}</ion-icon>
+              </ion-col>
+              <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
               
-                 <div class="label1">$8,272.26</div>
+                 <div class="label1">{{mk.name}}</div>
          
                </ion-col>
               <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                    
-                  <div class="label1">1.30 x</div>
+                  <div class="label1">{{mk.market_cap_usd}}</div>
                </ion-col>
                  <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                  
-                <div class="label1">$5,971.05</div>
+                <div class="label1">{{mk.price_usd}}</div>
                  </ion-col>
                    <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                  
-                      <div class="label1">0.94 x</div>
+                      <div class="label1">{{mk.percent_change_24h}}</div>
                    </ion-col>
             </ion-row>
            </ion-item>
 
-           <ion-item style="font-size: 11px !important">
-              <ion-row>
-                <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            
-                       <div class="label1">$54.23</div>
-               
-                </ion-col>
-                <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                
-                   <div class="label1">$85.22     </div>
-           
-                 </ion-col>
-                <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                     
-                    <div class="label1">1.57 x</div>
-                 </ion-col>
-                   <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                   
-                  <div class="label1">$47.67</div>
-                   </ion-col>
-                     <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                   
-                        <div class="label1">0.88 x</div>
-                     </ion-col>
-              </ion-row>
-             </ion-item>
-
-             <ion-item style="font-size: 11px !important">
-                <ion-row>
-                  <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              
-                         <div class="label1">$54.23</div>
-                 
-                  </ion-col>
-                  <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                  
-                     <div class="label1">$85.22     </div>
-             
-                   </ion-col>
-                  <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                       
-                      <div class="label1">1.57 x</div>
-                   </ion-col>
-                     <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                     
-                    <div class="label1">$47.67</div>
-                     </ion-col>
-                       <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                     
-                          <div class="label1">0.88 x</div>
-                       </ion-col>
-                </ion-row>
-               </ion-item>
-               <ion-item style="font-size: 11px !important">
-                  <ion-row>
-                    <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                
-                           <div class="label1">$54.23</div>
-                   
-                    </ion-col>
-                    <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                    
-                       <div class="label1">$85.22     </div>
-               
-                     </ion-col>
-                    <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                         
-                        <div class="label1">1.57 x</div>
-                     </ion-col>
-                       <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                       
-                      <div class="label1">$47.67</div>
-                       </ion-col>
-                         <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                       
-                            <div class="label1">0.88 x</div>
-                         </ion-col>
-                  </ion-row>
-                 </ion-item>
-                 <ion-item style="font-size: 11px !important">
-                    <ion-row>
-                      <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                  
-                             <div class="label1">$54.23</div>
-                     
-                      </ion-col>
-                      <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                      
-                         <div class="label1">$85.22     </div>
-                 
-                       </ion-col>
-                      <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                           
-                          <div class="label1">1.57 x</div>
-                       </ion-col>
-                         <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                         
-                        <div class="label1">$47.67</div>
-                         </ion-col>
-                           <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                         
-                              <div class="label1">0.88 x</div>
-                           </ion-col>
-                    </ion-row>
-                   </ion-item>
-                   <ion-item style="font-size: 11px !important">
-                      <ion-row>
-                        <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                    
-                               <div class="label1">$54.23</div>
-                       
-                        </ion-col>
-                        <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                        
-                           <div class="label1">$85.22     </div>
-                   
-                         </ion-col>
-                        <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                             
-                            <div class="label1">1.57 x</div>
-                         </ion-col>
-                           <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                           
-                          <div class="label1">$47.67</div>
-                           </ion-col>
-                             <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                           
-                                <div class="label1">0.88 x</div>
-                             </ion-col>
-                      </ion-row>
-                     </ion-item>
         </ion-list><br>
        
       </ion-grid>

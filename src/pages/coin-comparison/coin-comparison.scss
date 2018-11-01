@@ -14,13 +14,16 @@ page-coin-comparison {
         
     }
     .label{
-        color:white;
+        color:rgb(10, 0, 0);
         font-weight: bold;
     }
     .label1{
-        color: black;
+        color: black !important;
     }
     .btn1-size{
         font-size: 13px !important;
+    }
+    .label2{
+        color: white !important;
     }
 }

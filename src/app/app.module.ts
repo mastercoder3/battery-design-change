@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import {HttpClientModule} from '@angular/common/http'
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -21,10 +22,14 @@ import { AccountPage } from '../pages/account/account';
 import { FaqPage } from '../pages/faq/faq';
 import { ContactPage } from '../pages/contact/contact';
 import { LogoutPage } from '../pages/logout/logout';
+import { ApiServiceProvider } from '../providers/api-service/api-service';
+import { DecimalPipe } from '@angular/common';
+import {MillionPipe} from './../million';
 
 @NgModule({
   declarations: [
     MyApp,
+    MillionPipe,
     HomePage,
     ListPage,
     LoginPage,
@@ -44,6 +49,8 @@ import { LogoutPage } from '../pages/logout/logout';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -66,8 +73,10 @@ import { LogoutPage } from '../pages/logout/logout';
   ],
   providers: [
     StatusBar,
+    DecimalPipe,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ApiServiceProvider
   ]
 })
 export class AppModule {}

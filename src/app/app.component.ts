@@ -1,7 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -11,18 +12,19 @@ import { AccountPage } from '../pages/account/account';
 import { FaqPage } from '../pages/faq/faq';
 import { ContactPage } from '../pages/contact/contact';
 import { LogoutPage } from '../pages/logout/logout';
+import { ApiServiceProvider } from '../providers/api-service/api-service';
 
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class MyApp implements OnInit {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private api:ApiServiceProvider) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -35,6 +37,12 @@ export class MyApp {
     ];
 
   }
+
+  ngOnInit(){
+    
+    
+  }
+
 
   initializeApp() {
     this.platform.ready().then(() => {

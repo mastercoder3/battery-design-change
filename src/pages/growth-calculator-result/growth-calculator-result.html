@@ -32,7 +32,7 @@
     </ion-row>
   </ion-grid>
   
-  <ion-list style=" width:100%">
+  <ion-list style=" width:100%" *ngIf="growthCalculatorResult">
 
       <ion-item text-center style="background-color: #5AAE32">
      <ion-row>
@@ -48,7 +48,7 @@
    </ion-col>
    <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           
-      <div class="label">Factor 2x</div>
+      <div class="label">Factor {{multi}}x</div>
 </ion-col>
      </ion-row>
     </ion-item>
@@ -62,12 +62,12 @@
           </ion-col>
           <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           
-             <div class="label1">$434.23</div>
+             <div class="label1">${{growthCalculatorResult.priceInUSD}}</div>
      
       </ion-col>
       <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
              
-         <div class="label1">$869.23</div>
+         <div class="label1">${{ usd * multi}}</div>
    </ion-col>
         </ion-row>
        </ion-item>
@@ -81,18 +81,77 @@
             </ion-col>
             <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             
-               <div class="label1">0.06869174</div>
+               <div class="label1">{{growthCalculatorResult.priceInBTC}}</div>
        
         </ion-col>
         <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                
-           <div class="label1">0.13698829</div>
+           <div class="label1">{{btc * multi}}</div>
+     </ion-col>
+          </ion-row>
+         </ion-item>
+         <ion-item text-center>
+          <ion-row>
+            <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        
+                   <div class="label1">Market cap</div>
+           
+            </ion-col>
+            <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            
+               <div class="label1">{{growthCalculatorResult.marketCap}}</div>
+       
+        </ion-col>
+        <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+               
+           <div class="label1">${{cap  * multi}}</div>
+     </ion-col>
+          </ion-row>
+         </ion-item>
+         <ion-item text-center>
+          <ion-row>
+            <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        
+                   <div class="label1">Market Share</div>
+           
+            </ion-col>
+            <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            
+               <div class="label1">{{growthCalculatorResult.marketShare}}</div>
+       
+        </ion-col>
+        <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+               
+           <div class="label1">{{share  * multi}}%</div>
+     </ion-col>
+          </ion-row>
+         </ion-item>
+         <ion-item text-center>
+          <ion-row>
+            <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        
+                   <div class="label1">Rank</div>
+           
+            </ion-col>
+            <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            
+               <div class="label1">{{growthCalculatorResult.rank}}</div>
+       
+        </ion-col>
+        <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+               
+           <div class="label1">{{growthCalculatorResult.rankNew}}</div>
      </ion-col>
           </ion-row>
          </ion-item>
 
 
   </ion-list>
+  <ion-row *ngIf="growthCalculatorResult">
+  <ion-col ion-col text-left no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+    <p style="margin-top:-20px !important">The new market share of {{growthCalculatorResult.marketShareNew}} is calculated based on the current global market cap.</p>
+  </ion-col>
+</ion-row>
   
   <ion-fab right bottom>
     <button ion-fab color="light" style="background-color:#C0C0C0"><ion-icon name="add"></ion-icon></button>

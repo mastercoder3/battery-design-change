@@ -26,26 +26,31 @@
         </ion-col>
   <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
       <!-- <ion-item class="abc" text-center> -->
-      <ion-searchbar ></ion-searchbar>
+      <ion-searchbar [(ngModel)]="name" (ngModelChange)="onSearch($event)" name="name"></ion-searchbar>
+      <ion-list *ngIf="growthCalculator" >
+        <ion-item (click)="getGrowthCalculator(GC.symbol)" class="label"  *ngFor="let GC of growthCalculator">
+          {{GC.name}}    
+        </ion-item>
+      </ion-list>
       <!-- </ion-item> -->
   </ion-col>
   </ion-row>
 </ion-grid>
 
-<ion-card>
+  <ion-card *ngIf="showCard">
 <ion-grid>
-  <ion-row class="abc">
+  <ion-row class="abc" *ngIf="growthCalculator1">
     <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-        <ion-card-title text-center style="color:#006622"><b>7</b></ion-card-title>
+        <ion-card-title text-center style="color:#006622"><b>{{growthCalculator1.rank}}</b></ion-card-title>
       <span span-medium style="color:#A3D28B">Rank</span>
     </ion-col>
     <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-        <ion-card-title text-center style="color:#006622"><b>$54.23</b></ion-card-title>
+        <ion-card-title text-center style="color:#006622"><b>{{growthCalculator1.priceInUSD}}</b></ion-card-title>
       <p style="color:#A3D28B">Price in USD</p>
     </ion-col>
     <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-        <ion-card-title text-center style="color:#006622"><b>$3.16 B</b></ion-card-title>
-      <p style="color:#A3D28B">Market Cop</p>
+        <ion-card-title text-center style="color:#006622"><b>{{growthCalculator1.marketCap}}</b></ion-card-title>
+      <p style="color:#A3D28B">Market Cap</p>
     </ion-col>
   </ion-row>
   <hr>
@@ -61,7 +66,7 @@
 </ion-grid>
 </ion-card><br>
 
-<ion-grid>
+<ion-grid *ngIf="showbutton">
   <ion-row>
       <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           <button>
@@ -69,7 +74,7 @@
           </button>
       </ion-col>
     <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-        <ion-input class="input" text-center required type="number" style="margin-top:10px"></ion-input>
+        <ion-input class="input" text-center required type="number" style="margin-top:10px" [(ngModel)]="input"></ion-input>
     </ion-col>
     <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
       <button (click)="ClickToResultPage()">
