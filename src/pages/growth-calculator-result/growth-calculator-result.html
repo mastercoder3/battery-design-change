@@ -1,11 +1,11 @@
 <ion-header>
 
-  <ion-navbar>
-    <button ion-button menuToggle>
+  <!-- <ion-navbar> -->
+    <!-- <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
-    </button>
+    </button> -->
     <ion-title>CRYPTOWIZ</ion-title>
-  </ion-navbar>
+  <!-- </ion-navbar> -->
   
   </ion-header>
   
@@ -26,7 +26,7 @@
               </ion-col>
     <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <!-- <ion-item class="abc" text-center> -->
-        <ion-searchbar ></ion-searchbar><br>
+          <div class="symbol" *ngIf="searchCode">({{searchCode}})  <ion-icon name="close" id="iconCross" (click)="clickBackToGrowth()"></ion-icon></div><br>
         <!-- </ion-item> -->
     </ion-col>
     </ion-row>
@@ -146,7 +146,7 @@
          </ion-item>
 
 
-  </ion-list>
+  </ion-list><br>
   <ion-row *ngIf="growthCalculatorResult">
   <ion-col ion-col text-left no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
     <p style="margin-top:-20px !important">The new market share of {{growthCalculatorResult.marketShareNew}} is calculated based on the current global market cap.</p>

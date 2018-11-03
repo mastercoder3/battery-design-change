@@ -33,9 +33,9 @@
       </ion-row>
     </ion-grid>
 
-    <ion-grid style="width:100%">
+    <ion-grid >
 
-      <ion-list style=" width:100%" *ngIf="marketPrices">
+      <ion-list  *ngIf="marketPrices">
 
           <ion-item  style="background-color: #7B4397; font-size: 13px !important">
          <ion-row>
@@ -44,7 +44,10 @@
                   <div class="label">Rank</div>
           
            </ion-col>
-           <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+           <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+    
+          </ion-col>
+           <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
            
               <div class="label">Name</div>
       
@@ -64,7 +67,7 @@
          </ion-row>
         </ion-item>
 
-        <ion-item style="font-size: 11px !important"  *ngFor="let mk of marketPrices"> 
+        <ion-item class="ion-item" style="font-size: 11px !important"  *ngFor="let mk of marketPrices"> 
             <ion-row>
               <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           

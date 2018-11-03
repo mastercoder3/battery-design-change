@@ -19,6 +19,10 @@ export class ApiServiceProvider {
   CoinComparisonName:string = "https://demo.cryptowizzy.com/api/selectCoin.php?text=";
   GrowthCalculator:string = "https://demo.cryptowizzy.com/api/growthCalculatorCard.php?symbol=";
   GrowthCalculatorResult:string = "https://demo.cryptowizzy.com/api/growthCalculatorResult.php?symbol=";
+  SimulatorSlider1:string = "https://demo.cryptowizzy.com/api/simulatorCard1.php?symbol=";
+  SimulatorSlider2:string = "https://demo.cryptowizzy.com/api/simulatorCard2.php?symbol=";
+  SimulatorSlider3:string = "https://demo.cryptowizzy.com/api/simulatorCard3.php?symbol=";
+  SimulatorSlider4:string = "https://demo.cryptowizzy.com/api/simulatorCard4.php?symbol=";
 
   constructor(public http: HttpClient) {
     console.log('Hello ApiServiceProvider Provider');
@@ -53,5 +57,16 @@ export class ApiServiceProvider {
   getGrowthCalculatorResult(name){
     return this.http.get(this.GrowthCalculatorResult+name+"&growth=2");
   }
-
+  getSimulatorSlider1(name){
+    return this.http.get(this.SimulatorSlider1+name);
+  }
+  getSimulatorSlider2(name){
+    return this.http.get(this.SimulatorSlider2+name+"&growth=2");
+  }
+  getSimulatorSlider3(name){
+    return this.http.get(this.SimulatorSlider3+name);
+  }
+  getSimulatorSlider4(name){
+    return this.http.get(this.SimulatorSlider4+name+"&growth=2");
+  }
 }

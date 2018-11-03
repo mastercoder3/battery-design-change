@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SimulatorResultPage } from '../simulator-result/simulator-result';
 import { HomePage } from '../home/home';
 import { AccountPage } from '../account/account';
+import { ApiServiceProvider } from '../../providers/api-service/api-service';
+import { ViewChild } from '@angular/core';
+import { Slides } from 'ionic-angular';
+import { getLocaleWeekEndRange } from '@angular/common';
 
 /**
  * Generated class for the SimulatorPage page.
@@ -18,20 +22,138 @@ import { AccountPage } from '../account/account';
 })
 export class SimulatorPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  @ViewChild('slides') slides: Slides;
+  simulator;
+  name;
+  simulator1;
+  simulator2;
+  simulator3;
+  simulator4;
+  showSlider: boolean = false;
+  showbutton: boolean =false;
+  input: Array<any> = [];
+  factor;
+  showButton: boolean = false;
+  end: boolean =false;
+  lock:any;
+  
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiServiceProvider) {
+    
   }
+
+  getCoinComparisonName(name){
+    this.api.getCoinComparisonName(name).subscribe( (data) => {
+      this.simulator = data
+      console.log("CoinComparisonName",  this.simulator);
+    })
+   }
+
+   onSearch(event){
+   
+    if(event==""){
+      this.simulator='';  
+    }
+    else{
+     this.getCoinComparisonName(event);
+    }
+ //  this.name+=event.target.value;
+
+ 
+  }
+
+  getSimulator(name){
+    if(name == ""){
+      this.name = "";
+    }else{
+    this.name = name;
+   this.api.getSimulatorSlider1(this.name).subscribe((data) =>{
+     this.simulator1 = data
+     if(this.simulator1){
+       this.showSlider = true;
+       this.showbutton = true;
+       this.simulator = false;
+
+      setTimeout( () => {
+        this.slides.lockSwipes(true);
+      }, 1000);
+    this.getdata();
+     }
+   })
+
+  }}
+
+  getdata(){
+    this.api.getSimulatorSlider2(this.name).subscribe((data) =>{
+      this.simulator2 = data 
+      console.log(this.simulator2);
+       })
+       this.api.getSimulatorSlider3(this.name).subscribe((data) =>{
+        this.simulator3 = data 
+         })
+         this.api.getSimulatorSlider4(this.name).subscribe((data) =>{
+          this.simulator4 = data ;
+          
+           })
+      }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SimulatorPage');
+
   }
   ClcikToSimulatorResult(){
-    this.navCtrl.push(SimulatorResultPage);
+    
+    // this.navCtrl.push(SimulatorResultPage);
+    if(this.factor !== ''){
+        this.slides.lockSwipes(false);
+        this.slides.slideNext();
+        this.input.push(this.factor);
+        this.factor='';
+        this.slides.lockSwipes(true);
+       } 
+    if(this.end){
+      this.navCtrl.push(SimulatorResultPage,{
+        multi1: this.input[0],
+        multi2:this.input[1],
+        multi3:this.input[2],
+        multi4:this.input[3],
+        name: this.name
+      });
+      
+    }
+    
+    if(this.slides.isEnd()){
+      this.end = true;
+    }
+    if(this.input[0]=""){
+   
+    }
+      
   }
+  
+  
   ClickToHomePage(){
     this.navCtrl.setRoot(HomePage);
   }
   clickToAccountPage(){
     this.navCtrl.setRoot(AccountPage);
+  }
+
+  backButton(){
+    this.slides.slidePrev();
+    this.factor = this.input.pop();
+  }
+
+  inputFocus(){
+    this.showButton = true;
+  }
+
+  inputBlur(){
+    if(this.factor !== '')
+    this.showButton = true;
+    else
+    this.showButton = false
   }
 
 }

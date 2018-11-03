@@ -40,7 +40,7 @@
   <ion-card *ngIf="showCard">
 <ion-grid>
   <ion-row class="abc" *ngIf="growthCalculator1">
-    <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+    <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <ion-card-title text-center style="color:#006622"><b>{{growthCalculator1.rank}}</b></ion-card-title>
       <span span-medium style="color:#A3D28B">Rank</span>
     </ion-col>
@@ -48,7 +48,7 @@
         <ion-card-title text-center style="color:#006622"><b>{{growthCalculator1.priceInUSD}}</b></ion-card-title>
       <p style="color:#A3D28B">Price in USD</p>
     </ion-col>
-    <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+    <ion-col ion-col text-center no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <ion-card-title text-center style="color:#006622"><b>{{growthCalculator1.marketCap}}</b></ion-card-title>
       <p style="color:#A3D28B">Market Cap</p>
     </ion-col>
@@ -74,7 +74,7 @@
           </button>
       </ion-col>
     <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-        <ion-input class="input" text-center required type="number" style="margin-top:10px" [(ngModel)]="input"></ion-input>
+        <ion-input class="input" text-center required type="number" min="2" style="margin-top:10px" [(ngModel)]="input"></ion-input>
     </ion-col>
     <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
       <button (click)="ClickToResultPage()">

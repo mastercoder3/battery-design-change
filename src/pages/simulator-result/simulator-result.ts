@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { AccountPage } from '../account/account';
+import { SimulatorPage } from '../simulator/simulator';
 
 /**
  * Generated class for the SimulatorResultPage page.
@@ -17,12 +18,22 @@ import { AccountPage } from '../account/account';
 })
 export class SimulatorResultPage {
 
+  multi1;
+  multi2;
+  multi3;
+  multi4;
+  searchCode;
   buttonclass1 = "custombutton1"
   buttonclass2 = "custombutton2"
   show=true;
   // show1=true;
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.multi1 = this.navParams.get('multi1');
+    this.multi2 = this.navParams.get('multi2');
+    this.multi3 = this.navParams.get('multi3');
+    this.multi4 = this.navParams.get('multi4');
+    this.searchCode = this.navParams.get('name');
   }
 
   ionViewDidLoad() {
@@ -50,5 +61,9 @@ toggle_click(){
     this.buttonclass2 = "custombutton2"
    }
 }
+clickBackToSimulator(){
+  this.navCtrl.setRoot(SimulatorPage);
+}
+
 
 }

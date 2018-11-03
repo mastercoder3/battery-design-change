@@ -1,11 +1,11 @@
 <ion-header>
 
-    <ion-navbar>
+    <!-- <ion-navbar>
         <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
-        </button>
+        </button> -->
         <ion-title>CRYPTOWIZ</ion-title>
-      </ion-navbar>
+      <!-- </ion-navbar> -->
   
   </ion-header>
 
@@ -26,7 +26,7 @@
                       </ion-col>
       <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           <!-- <ion-item class="abc" text-center> -->
-          <ion-searchbar ></ion-searchbar><br>
+            <div class="symbol" *ngIf="searchCode">({{searchCode}})  <ion-icon name="close" id="iconCross" (click)="clickBackToSimulator()"></ion-icon></div><br>
           <!-- </ion-item> -->
       </ion-col>
       </ion-row>
@@ -36,19 +36,19 @@
             <ion-row>
         <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             <div class="label" style="font-size:13px">Price</div>
-            <span class="span" span-medium style="color:white">2x</span>
+            <span class="span" span-medium style="color:white">{{multi1}}x</span>
         </ion-col>
         <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             <div class="label" style="font-size:13px">Months</div>
-            <span class="span" span-medium style="color:white">2</span>
+            <span class="span" span-medium style="color:white">{{multi2}}</span>
         </ion-col>
         <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             <div class="label" style="font-size:13px">Global market</div>
-            <span class="span" span-medium style="color:white">2x</span>
+            <span class="span" span-medium style="color:white">{{multi3}}x</span>
         </ion-col>
         <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             <div class="label" style="font-size:13px">BTC Share</div>
-            <span class="span" span-medium style="color:white">2%</span>
+            <span class="span" span-medium style="color:white">{{multi4}}%</span>
         </ion-col>
          </ion-row>
         </ion-item><br><br><br><br>

@@ -5,6 +5,7 @@ import { AccountPage } from '../account/account';
 import { ApiServiceProvider } from '../../providers/api-service/api-service';
 import { Pipe, PipeTransform } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
+import { GrowthCalculatorPage } from '../growth-calculator/growth-calculator';
 
 /**
  * Generated class for the GrowthCalculatorResultPage page.
@@ -33,6 +34,7 @@ export class GrowthCalculatorResultPage {
     this.multi = this.navParams.get('multi');
     console.log(this.multi);
     this.searchCode = this.navParams.get('name');
+    
   }
 
   ngOnInit(){
@@ -62,6 +64,9 @@ export class GrowthCalculatorResultPage {
   }
   clickToAccountPage(){
     this.navCtrl.setRoot(AccountPage);
+  }
+  clickBackToGrowth(){
+    this.navCtrl.setRoot(GrowthCalculatorPage);
   }
 
 }
