@@ -14,6 +14,7 @@
           </ion-col> -->
           <ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             <div form>
+              <form [formGroup]="form" (ngSubmit)="login(form)" >
             <!-- Header Title -->
             <h2 ion-text register-title no-margin padding-bottom text-wrap style="color: #66b2ff">Welcome!</h2><br><br>
               <!--Form-->
@@ -28,7 +29,8 @@
                      
                     </ion-col>
                   <ion-col no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                  <ion-input class="input" text-left  type="email" placeholder="E-mail address" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" [(ngModel)]="email"></ion-input>
+                  <ion-input class="input" text-left  type="email"
+                   placeholder="E-mail address" formControlName="email" #email ></ion-input>
                   </ion-col>
                   
                   <ion-label error-field no-margin></ion-label>
@@ -44,7 +46,8 @@
                      
                         </ion-col>
                       <ion-col no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                    <ion-input class="input" text-left type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+                    <ion-input class="input" text-left type="password" placeholder="Password" formControlName="password" #password 
+                    ></ion-input>
                     <ion-label error-field no-margin></ion-label>
                      </ion-col>
                     </ion-row><br>
@@ -56,13 +59,13 @@
 
                 </ion-col>
                 <ion-col ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              <button ion-button block default-button text-capitalize box-shadow (click)="login()" >Sign in</button>
+              <button ion-button block default-button text-capitalize box-shadow type="submit" [disabled]="form.pristine || form.invalid" >Sign in</button>
                 </ion-col>
                 <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                   
                   </ion-col>
                   </ion-row>
-                  
+                </form>
                   </div>
                   
             <ion-grid>

@@ -1,9 +1,9 @@
 <ion-header>
 
   <ion-navbar>
-    <button ion-button menuToggle>
+    <!-- <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
-    </button>
+    </button> -->
     <ion-title>CRYPTOWIZ</ion-title>
   </ion-navbar>
 
@@ -18,7 +18,7 @@
 
       </ion-col>
       <ion-col ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-  <button class="btn1-size" ion-button block default-button text-capitalize box-shadow style="background:#8ACD50" ><b>GROWTH CALCULATOR</b></button><br>
+  <button class="btn1-size" ion-button block default-button text-capitalize style="background:#8ACD50" ><b>GROWTH CALCULATOR</b></button><br>
 
       </ion-col>
       <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
@@ -42,22 +42,22 @@
   <ion-row class="abc" *ngIf="growthCalculator1">
     <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <ion-card-title text-center style="color:#006622"><b>{{growthCalculator1.rank}}</b></ion-card-title>
-      <span span-medium style="color:#A3D28B">Rank</span>
+      <span class="span" style="color:#A3D28B">Rank</span>
     </ion-col>
     <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <ion-card-title text-center style="color:#006622"><b>{{growthCalculator1.priceInUSD}}</b></ion-card-title>
-      <p style="color:#A3D28B">Price in USD</p>
+      <span class="span" style="color:#A3D28B">Price in USD</span>
     </ion-col>
     <ion-col ion-col text-center no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <ion-card-title text-center style="color:#006622"><b>{{growthCalculator1.marketCap}}</b></ion-card-title>
-      <p style="color:#A3D28B">Market Cap</p>
+      <span class="span" style="color:#A3D28B">Market Cap</span>
     </ion-col>
   </ion-row>
   <hr>
   <hr>
   <ion-row>
     <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-        <ion-card-content style=" font-size: 20px; color:#7ABD58">
+        <ion-card-content style=" font-size: 18px; color:#7ABD58">
             Enter your growth expectation for this coin. If you think the <b>price</b> will double enter 2 below.
           </ion-card-content>
 

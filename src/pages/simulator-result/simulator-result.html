@@ -18,7 +18,7 @@
 
                     </ion-col>
                     <ion-col ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                <button class="btn1-size" ion-button block default-button text-capitalize box-shadow style="background:#034EB6" ><b>SIMULATOR</b></button><br>
+                <button class="btn1-size" ion-button block default-button text-capitalize style="background:#034EB6" ><b>SIMULATOR</b></button><br>
               
                     </ion-col>
                     <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
@@ -78,7 +78,7 @@
 
           <!-- :::::::::::::::::::::::::::::: Results :::::::::::::::::::::::::::::::::: -->
 
-        <ion-list *ngIf="show" style=" width:100%">
+        <ion-list no-lines *ngIf="show" style=" width:100%">
 
             <ion-item text-center style="background-color: #033598; font-size: 13px !important">
            <ion-row>
@@ -99,7 +99,7 @@
            </ion-row>
           </ion-item>
       
-          <ion-item text-center>
+          <ion-item text-center *ngIf="simulatorResult">
               <ion-row>
                 <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             
@@ -108,17 +108,17 @@
                 </ion-col>
                 <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                 
-                   <div class="label1">$434.23</div>
+                   <div class="label1">{{simulatorResult.priceInUSD}}</div>
            
             </ion-col>
             <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                    
-               <div class="label1">$869.23</div>
+               <div class="label1">{{simulatorResult.priceInUSDNew}}</div>
          </ion-col>
               </ion-row>
              </ion-item>
       
-             <ion-item text-center>
+             <ion-item text-center *ngIf="simulatorResult">
                 <ion-row>
                   <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
               
@@ -127,58 +127,166 @@
                   </ion-col>
                   <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                   
-                     <div class="label1">0.06869174</div>
+                     <div class="label1">{{simulatorResult.priceInBTC}}</div>
              
               </ion-col>
               <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                      
-                 <div class="label1">0.13698829</div>
+                 <div class="label1">{{simulatorResult.priceInBTCNew}}</div>
            </ion-col>
                 </ion-row>
                </ion-item>
-               <ion-item text-center>
+               <ion-item text-center *ngIf="simulatorResult">
                   <ion-row>
                     <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                 
-                           <div class="label1">Price in BTC</div>
+                           <div class="label1">Market cap</div>
                    
                     </ion-col>
                     <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                     
-                       <div class="label1">0.06869174</div>
+                       <div class="label1">{{simulatorResult.marketCap}}</div>
                
                 </ion-col>
                 <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                        
-                   <div class="label1">0.13698829</div>
+                   <div class="label1">{{simulatorResult.marketCapNew}}</div>
              </ion-col>
                   </ion-row>
                  </ion-item>
-                 <ion-item text-center>
+                 <ion-item text-center *ngIf="simulatorResult">
                     <ion-row>
                       <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                   
-                             <div class="label1">Price in BTC</div>
+                             <div class="label1">Market share</div>
                      
                       </ion-col>
                       <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                       
-                         <div class="label1">0.06869174</div>
+                         <div class="label1">{{simulatorResult.marketShare}}</div>
                  
                   </ion-col>
                   <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                          
-                     <div class="label1">0.13698829</div>
+                     <div class="label1">{{simulatorResult.marketShareNew}}</div>
                </ion-col>
                     </ion-row>
                    </ion-item>
+                   <ion-item text-center *ngIf="simulatorResult">
+                        <ion-row>
+                          <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                      
+                                 <div class="label1">Rank</div>
+                         
+                          </ion-col>
+                          <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                          
+                             <div class="label1">{{simulatorResult.rank}}</div>
+                     
+                      </ion-col>
+                      <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                             
+                         <div class="label1">{{simulatorResult.rankNew}}</div>
+                   </ion-col>
+                        </ion-row>
+                       </ion-item>
+                       <ion-item text-center *ngIf="simulatorResult">
+                            <ion-row>
+                              <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                          
+                                     <div class="label1">Price in USD</div>
+                             
+                              </ion-col>
+                              <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                              
+                                 <div class="label1">{{simulatorResult.BTCprice}}</div>
+                         
+                          </ion-col>
+                          <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                 
+                             <div class="label1">{{simulatorResult.BTCPriceNew}}</div>
+                       </ion-col>
+                            </ion-row>
+                           </ion-item>
+                           <ion-item text-center *ngIf="simulatorResult">
+                                <ion-row>
+                                  <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                              
+                                         <div class="label1">Market cap</div>
+                                 
+                                  </ion-col>
+                                  <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                  
+                                     <div class="label1">{{simulatorResult.BTCMarketCap}}</div>
+                             
+                              </ion-col>
+                              <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                     
+                                 <div class="label1">{{simulatorResult.BTCMarketCapNew}}</div>
+                           </ion-col>
+                                </ion-row>
+                               </ion-item>
+                               <ion-item text-center *ngIf="simulatorResult">
+                                    <ion-row>
+                                      <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                  
+                                             <div class="label1">Altcoin market cap</div>
+                                     
+                                      </ion-col>
+                                      <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                      
+                                         <div class="label1">{{simulatorResult.altMarketCap}}</div>
+                                 
+                                  </ion-col>
+                                  <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                         
+                                     <div class="label1">{{simulatorResult.altMarketCapNew}}</div>
+                               </ion-col>
+                                    </ion-row>
+                                   </ion-item>
+                                   <ion-item text-center *ngIf="simulatorResult">
+                                        <ion-row>
+                                          <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                      
+                                                 <div class="label1">Global market cap</div>
+                                         
+                                          </ion-col>
+                                          <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                          
+                                             <div class="label1">{{simulatorResult.gmc}}</div>
+                                     
+                                      </ion-col>
+                                      <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                             
+                                         <div class="label1">{{simulatorResult.gmcNew}}</div>
+                                   </ion-col>
+                                        </ion-row>
+                                       </ion-item>
+                                       <ion-item text-center *ngIf="simulatorResult">
+                                            <ion-row>
+                                              <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                          
+                                                     <div class="label1">Market share</div>
+                                             
+                                              </ion-col>
+                                              <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                              
+                                                 <div class="label1">{{simulatorResult.BTCMarketShare}}</div>
+                                         
+                                          </ion-col>
+                                          <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                                 
+                                             <div class="label1">{{simulatorResult.BTCMarketShareNew}}</div>
+                                       </ion-col>
+                                            </ion-row>
+                                           </ion-item>
       
       
         </ion-list>
         
        <!-- :::::::::::::::::::::::::::::: Summary :::::::::::::::::::::::::::::::::: -->
 
-       <ion-card class="abc" *ngIf="!show">
+       <ion-card class="abc" *ngIf="!show && simulatorSummary">
           <ion-row style="background-color:#4EB67C">
               <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                   <ion-icon name="bulb-outline" style="font-size:25px; margin:5px;"></ion-icon>
@@ -202,20 +310,20 @@
             </ion-row><br>
             <ion-row>
                 <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                    <span class="ab" span-medium style="color:#006600">2 X</span><br>
-                    <span class="ab" span-medium style="color:#669933">$108.46</span><br>
+                    <span *ngIf="multi1" class="ab" span-medium style="color:#006600">{{multi1}} X</span><br>
+                    <span class="ab" span-medium style="color:#669933">{{simulatorSummary.comparison.priceInUSDNew}}</span><br>
                     <span span-medium style="color:#B0D7B0; font-size: 12px !important">New Value</span>
                 </ion-col>
                 <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                     <span class="ab" span-medium style="color:#006600">0.3 X</span><br>
-                    <span class="ab" span-medium style="color:#669933">$8,872.46</span><br>
+                    <span class="ab" span-medium style="color:#669933">{{simulatorSummary.comparison.BTCpriceInUSDNew}}</span><br>
                     <span span-medium style="color:#B0D7B0; font-size: 12px !important">New Value</span>
                 </ion-col>
             </ion-row>
             <hr>
             <ion-row>
                 <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                    <span span-medium style="color:#B0D7B0">LTC</span><br>
+                    <span *ngIf="searchCode" span-medium style="color:#B0D7B0">{{searchCode}}</span><br>
                     <span span-medium style="color:#669933; font-size: 10px !important; font-weight: bold !important">Out Performs</span><br>
                     <span span-medium style="color:#B0D7B0; font-size: 12px !important">BTC By Factor</span>
                 </ion-col>
@@ -228,7 +336,7 @@
 
        </ion-card><br>
         
-       <ion-card class="abc" *ngIf="!show">
+       <ion-card class="abc" *ngIf="!show && simulatorSummary">
         <ion-row style="background-color:#F16B8B">
             <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                 <ion-icon name="bulb-outline" style="font-size:25px; margin:5px;"></ion-icon>
@@ -252,18 +360,18 @@
           </ion-row><br>
           <ion-row>
               <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                  <span class="ab" span-medium style="color:#FF9999">0.05881205</span><br>
+                  <span class="ab" span-medium style="color:#FF9999">{{simulatorSummary.satoshi.newValue}}</span><br>
                   <span span-medium style="color:#FFB0B0; font-size: 12px !important">New Value</span>
               </ion-col>
               <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                   <span class="ab" span-medium style="color:#FF9999">0.00855476</span><br>
-                  <span span-medium style="color:#FFB0B0; font-size: 12px !important">Current Value</span>
+                  <span span-medium style="color:#FFB0B0; font-size: 12px !important">{{simulatorSummary.satoshi.currentValue}}</span>
               </ion-col>
           </ion-row><br>
 
      </ion-card><br>
 
-     <ion-card class="abc" *ngIf="!show">
+     <ion-card class="abc" *ngIf="!show && simulatorSummary">
         <ion-row style="background-color:#008BFF">
             <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                 <ion-icon name="bulb-outline" style="font-size:25px; margin:5px;"></ion-icon>
@@ -287,20 +395,20 @@
           </ion-row><br>
           <ion-row>
               <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                    <span class="ab" span-medium style="color:#00A9FF">5 rank</span><br>
-                  <span  span-medium style="color:#16B0FF; font-size: 14px !important">0.79% market share</span><br>
+                    <span class="ab" span-medium style="color:#00A9FF">{{simulatorSummary.rank.newRank}}</span><br>
+                  <span  span-medium style="color:#16B0FF; font-size: 14px !important">{{simulatorSummary.rank.newMarketShare}} market share</span><br>
                   <span span-medium style="color:#16B0FF; font-size: 12px !important">New rank</span>
               </ion-col>
               <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                    <span class="ab" span-medium style="color:#00A9FF">7 rank</span><br>
-                    <span  span-medium style="color:#16B0FF; font-size: 14px !important">1.59% market share</span><br>
+                    <span class="ab" span-medium style="color:#00A9FF">{{simulatorSummary.rank.currentRank}}</span><br>
+                    <span  span-medium style="color:#16B0FF; font-size: 14px !important">{{simulatorSummary.rank.currentMarketShare}} market share</span><br>
                     <span span-medium style="color:#16B0FF; font-size: 12px !important">Current rank</span>
               </ion-col>
           </ion-row><br>
 
      </ion-card><br>
 
-     <ion-card class="abc" *ngIf="!show">
+     <ion-card class="abc" *ngIf="!show && searchCode">
             <ion-row style="background-color:#8156A3">
                 <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                     <ion-icon name="bulb-outline" style="font-size:25px; margin:5px;"></ion-icon>
@@ -315,7 +423,7 @@
                 </ion-col>
                 
                     <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                      <span span-medium style="color:#9071B2">LTC grows faster than BTC</span>
+                      <span span-medium style="color:#9071B2">{{searchCode}} grows faster than BTC</span>
                     </ion-col>
               </ion-row>
               <hr>
@@ -325,7 +433,7 @@
                     </ion-col>
                     
                         <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                          <span span-medium style="color:#9071B2"> LTC's market share is smaller than BTC's</span>
+                          <span span-medium style="color:#9071B2"> {{searchCode}} market share is smaller than BTC's</span>
                         </ion-col>
                   </ion-row>
                   <hr>
@@ -335,7 +443,7 @@
                         </ion-col>
                         
                             <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                              <span span-medium style="color:#9071B2">LTC has less than 25% of the ALT market</span>
+                              <span span-medium style="color:#9071B2">{{searchCode}} has less than 25% of the ALT market</span>
                             </ion-col>
                       </ion-row>
                       

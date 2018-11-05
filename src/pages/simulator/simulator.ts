@@ -7,6 +7,7 @@ import { ApiServiceProvider } from '../../providers/api-service/api-service';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { getLocaleWeekEndRange } from '@angular/common';
+import { HelperProvider } from '../../providers/helper/helper';
 
 /**
  * Generated class for the SimulatorPage page.
@@ -38,7 +39,7 @@ export class SimulatorPage {
   lock:any;
   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiServiceProvider, private helper: HelperProvider) {
     
   }
 
@@ -103,31 +104,29 @@ export class SimulatorPage {
 
   }
   ClcikToSimulatorResult(){
-    
-    // this.navCtrl.push(SimulatorResultPage);
-    if(this.factor !== ''){
+    if(this.factor !== '' && this.factor !== undefined ){
         this.slides.lockSwipes(false);
         this.slides.slideNext();
         this.input.push(this.factor);
-        this.factor='';
+        console.log(this.input);
         this.slides.lockSwipes(true);
+        this.factor='';
        } 
-    if(this.end){
-      this.navCtrl.push(SimulatorResultPage,{
+       else 
+        this.helper.presentToast('Please enter a number larger than zero before clicking the arrow.')
+       
+        if(this.end){
+        this.navCtrl.push(SimulatorResultPage,{
         multi1: this.input[0],
         multi2:this.input[1],
         multi3:this.input[2],
         multi4:this.input[3],
         name: this.name
-      });
-      
+      });  
     }
     
     if(this.slides.isEnd()){
       this.end = true;
-    }
-    if(this.input[0]=""){
-   
     }
       
   }
@@ -141,7 +140,9 @@ export class SimulatorPage {
   }
 
   backButton(){
+    this.slides.lockSwipes(false);
     this.slides.slidePrev();
+    this.slides.lockSwipes(true);
     this.factor = this.input.pop();
   }
 

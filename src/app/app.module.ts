@@ -25,6 +25,7 @@ import { LogoutPage } from '../pages/logout/logout';
 import { ApiServiceProvider } from '../providers/api-service/api-service';
 import { DecimalPipe } from '@angular/common';
 import {MillionPipe} from './../million';
+import { HelperProvider } from '../providers/helper/helper';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import {MillionPipe} from './../million';
     DecimalPipe,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ApiServiceProvider
+    ApiServiceProvider,
+    HelperProvider
   ]
 })
 export class AppModule {}

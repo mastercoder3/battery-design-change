@@ -4,6 +4,9 @@ import { RegisterPage } from '../register/register';
 import { HomePage } from '../home/home';
 import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 import { ApiServiceProvider } from '../../providers/api-service/api-service';
+import { ToastController } from 'ionic-angular';
+import {FormGroup, Validators, FormBuilder} from '@angular/forms';
+import { HelperProvider } from '../../providers/helper/helper';
 
 /**
  * Generated class for the LoginPage page.
@@ -22,24 +25,35 @@ export class LoginPage {
   email;
   password;
   id;
+  form: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiServiceProvider) {
+  constructor(public navCtrl: NavController,private fb: FormBuilder , private helper: HelperProvider,
+     public navParams: NavParams, private api: ApiServiceProvider,private toastCtrl: ToastController) {
+      this.form = this.fb.group({
+        email: ['',Validators.compose([Validators.required, Validators.email])],
+        password: ['',Validators.required]
+      });
   }
 
-  login(){
-    if(this.email !== '' && this.password !== '')
-    this.api.login(this.email,this.password)
+  login(form){
+    this.api.login(form.value.email,form.value.password)
       .subscribe(res => {
-        console.log(res);
-        this.id = res;
-        console.log(this.id);
-        this.navCtrl.setRoot(HomePage);
+        if(res){
+          this.id = res;
+          this.navCtrl.setRoot(HomePage);
+        }
+        else{
+            this.helper.presentToast('Invalid Email or Password.');
+        }
+
         
       });
   }
 
+  get f(){return this.form.controls;}
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+
   }
   ClickToRegister(){
     this.navCtrl.push(RegisterPage);

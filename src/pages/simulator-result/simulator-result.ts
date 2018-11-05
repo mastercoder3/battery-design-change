@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { AccountPage } from '../account/account';
 import { SimulatorPage } from '../simulator/simulator';
+import { ApiServiceProvider } from '../../providers/api-service/api-service';
 
 /**
  * Generated class for the SimulatorResultPage page.
@@ -18,6 +19,8 @@ import { SimulatorPage } from '../simulator/simulator';
 })
 export class SimulatorResultPage {
 
+  simulatorResult;
+  simulatorSummary;
   multi1;
   multi2;
   multi3;
@@ -28,7 +31,7 @@ export class SimulatorResultPage {
   show=true;
   // show1=true;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiServiceProvider) {
     this.multi1 = this.navParams.get('multi1');
     this.multi2 = this.navParams.get('multi2');
     this.multi3 = this.navParams.get('multi3');
@@ -36,14 +39,31 @@ export class SimulatorResultPage {
     this.searchCode = this.navParams.get('name');
   }
 
+ngOnInit(){
+  this.getSimulatorResult();
+  this.getSimulatorSummary();
+}
   ionViewDidLoad() {
     console.log('ionViewDidLoad SimulatorResultPage');
+    
   }
   ClickToHomePage(){
     this.navCtrl.setRoot(HomePage);
   }
   clickToAccountPage(){
     this.navCtrl.setRoot(AccountPage);
+  }
+  getSimulatorResult(){
+    this.api.getSimulatorResult(this.searchCode, this.multi1, this.multi2, this.multi3, this.multi4).subscribe( (data) => {
+      this.simulatorResult = data
+      console.log("data",  this.simulatorResult);
+    })
+  }
+  getSimulatorSummary(){
+    this.api.getSimulatorSummary(this.searchCode, this.multi1, this.multi2, this.multi3, this.multi4).subscribe( (data) => {
+      this.simulatorSummary = data
+      console.log("data",  this.simulatorSummary);
+    })
   }
 
 toggle_click(){

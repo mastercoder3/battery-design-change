@@ -20,18 +20,19 @@ export class CoinComparisonPage {
 
   coinComparison;
   coinComparsionName;
-  
+  input;
+  coinComparisonAddCoin;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private api:ApiServiceProvider) {
   }
 
   ionViewDidEnter(){
     this.getCoinComparison();
-    
+    this.getCoinComparisonName('eth');
   }
 
   ngOnInit(){
-
+this.getCoinComparisonAddCoin();
   }
   getCoinComparison(){
     this.api.getCoinComparison().subscribe( (data) => {
@@ -56,6 +57,13 @@ export class CoinComparisonPage {
 //  this.name+=event.target.value;
  console.log(event);
 
+ }
+
+ getCoinComparisonAddCoin(){
+   this.api.getCoinComparisonAddCoin(this.coinComparsionName, this.input).subscribe( (data) => {
+    this.coinComparisonAddCoin = data
+    console.log("coinComparisonAddCoins",  this.coinComparisonAddCoin);
+  })
  }
 
   ionViewDidLoad() {

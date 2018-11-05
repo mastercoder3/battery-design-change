@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { ApiServiceProvider } from '../../providers/api-service/api-service';
+import {FormGroup, Validators, FormBuilder} from '@angular/forms';
+import { HelperProvider } from '../../providers/helper/helper';
 
 /**
  * Generated class for the RegisterPage page.
@@ -22,27 +24,32 @@ export class RegisterPage {
   password2;
   ref;
   id;
+  form: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiServiceProvider, private toast: ToastController) {
-  }
+  constructor(public navCtrl: NavController,private fb: FormBuilder , private helper: HelperProvider,
+    public navParams: NavParams, private api: ApiServiceProvider,private toastCtrl: ToastController) {
+     this.form = this.fb.group({
+       email: ['',Validators.compose([Validators.required, Validators.email])],
+       password: ['',Validators.compose([Validators.required, Validators.minLength(6)])],
+       password2: ['',Validators.compose([Validators.required, Validators.minLength(6)])],
+       ref: ['',Validators.required]
+     });
+ }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }
-  register(){
-    if(this.email !== '' && this.password !== '' && this.password2 !== '' && this.ref !== '')
-    this.api.signup(this.email,this.password,this.ref)
+  register(form){
+    
+    this.api.signup(form.value.email,form.value.password,form.value.password2,form.value.ref)
       .subscribe(res => {
-        this.id = res;
-        console.log(this.id);
-        if(this.id.res){
-          let toaster = this.toast.create({
-            message: "Registered successfully",
-            duration: 3000
-          });
-          toaster.present();
-          // localStorage.setItem('uid',this.id.iduser);
-        }
+        if(res){
+          this.id = res;
+          this.navCtrl.push(LoginPage);
+        }else{
+          this.helper.presentToast('Invalid Email or Password.');
+      }
+       
 
       });
   }

@@ -4,6 +4,7 @@ import { GrowthCalculatorResultPage } from '../growth-calculator-result/growth-c
 import { HomePage } from '../home/home';
 import { AccountPage } from '../account/account';
 import { ApiServiceProvider } from '../../providers/api-service/api-service';
+import { HelperProvider } from '../../providers/helper/helper';
 
 /**
  * Generated class for the GrowthCalculatorPage page.
@@ -23,10 +24,10 @@ export class GrowthCalculatorPage {
   growthCalculator1;
   showCard: boolean = false;
   showbutton: boolean = false;
-  input;
+  input:string='';
   name;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private api:ApiServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private api:ApiServiceProvider, private helper: HelperProvider) {
   }
 
   ionViewDidLoad() {
@@ -67,11 +68,14 @@ export class GrowthCalculatorPage {
   }
 
   ClickToResultPage(){
+    if(this.input===""){
+      this.helper.presentToast('Please enter a number larger than zero before clicking the arrow.');
+    }else{
     this.navCtrl.push(GrowthCalculatorResultPage,{
       multi: this.input,
       name: this.name
     });
-  }
+  }}
   ClickToHomePage(){
     this.navCtrl.setRoot(HomePage);
   }
