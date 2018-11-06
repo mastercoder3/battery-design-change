@@ -315,7 +315,7 @@
                     <span span-medium style="color:#B0D7B0; font-size: 12px !important">New Value</span>
                 </ion-col>
                 <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                    <span class="ab" span-medium style="color:#006600">0.3 X</span><br>
+                    <span class="ab" span-medium style="color:#006600">{{simulatorSummary.comparison.BTCgrowth}}</span><br>
                     <span class="ab" span-medium style="color:#669933">{{simulatorSummary.comparison.BTCpriceInUSDNew}}</span><br>
                     <span span-medium style="color:#B0D7B0; font-size: 12px !important">New Value</span>
                 </ion-col>
@@ -324,12 +324,12 @@
             <ion-row>
                 <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                     <span *ngIf="searchCode" span-medium style="color:#B0D7B0">{{searchCode}}</span><br>
-                    <span span-medium style="color:#669933; font-size: 10px !important; font-weight: bold !important">Out Performs</span><br>
+                    <span span-medium style="color:#669933; font-size: 10px !important; font-weight: bold !important">{{simulatorSummary.comparison.performanceText}}</span><br>
                     <span span-medium style="color:#B0D7B0; font-size: 12px !important">BTC By Factor</span>
                 </ion-col>
                 <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                     
-                    <h2 class="ab2" style="color:#669933">6.89 X</h2>
+                    <h2 class="ab2" style="color:#669933">{{simulatorSummary.comparison.performanceValue}}</h2>
                     
                 </ion-col>
             </ion-row>

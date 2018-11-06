@@ -55,6 +55,9 @@
 
     <ion-item class="ion-item" text-center>
         <ion-row>
+            <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+growthCalculatorResult.logoid+".png"'>
+           </ion-col>
           <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
       
                  <div class="label1">Price in USD</div>
@@ -65,7 +68,7 @@
              <div class="label1">${{growthCalculatorResult.priceInUSD}}</div>
      
       </ion-col>
-      <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+      <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
              
          <div class="label1">${{ usd * multi}}</div>
    </ion-col>
@@ -74,6 +77,9 @@
 
        <ion-item class="ion-item" text-center>
           <ion-row>
+              <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+growthCalculatorResult.logoid+".png"'>
+             </ion-col>
             <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         
                    <div class="label1">Price in BTC</div>
@@ -84,7 +90,7 @@
                <div class="label1">{{growthCalculatorResult.priceInBTC}}</div>
        
         </ion-col>
-        <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                
            <div class="label1">{{btc * multi}}</div>
      </ion-col>
@@ -92,6 +98,9 @@
          </ion-item>
          <ion-item class="ion-item" text-center>
           <ion-row>
+              <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+growthCalculatorResult.logoid+".png"'>
+             </ion-col>
             <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         
                    <div class="label1">Market cap</div>
@@ -102,7 +111,7 @@
                <div class="label1">{{growthCalculatorResult.marketCap}}</div>
        
         </ion-col>
-        <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                
            <div class="label1">${{cap  * multi}}</div>
      </ion-col>
@@ -110,6 +119,9 @@
          </ion-item>
          <ion-item class="ion-item" text-center>
           <ion-row>
+              <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+growthCalculatorResult.logoid+".png"'>
+             </ion-col>
             <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         
                    <div class="label1">Market Share</div>
@@ -120,7 +132,7 @@
                <div class="label1">{{growthCalculatorResult.marketShare}}</div>
        
         </ion-col>
-        <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                
            <div class="label1">{{share  * multi}}%</div>
      </ion-col>
@@ -128,6 +140,9 @@
          </ion-item>
          <ion-item class="ion-item" text-center>
           <ion-row>
+              <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+growthCalculatorResult.logoid+".png"'>
+             </ion-col>
             <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         
                    <div class="label1">Rank</div>
@@ -138,7 +153,7 @@
                <div class="label1">{{growthCalculatorResult.rank}}</div>
        
         </ion-col>
-        <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                
            <div class="label1">{{growthCalculatorResult.rankNew}}</div>
      </ion-col>

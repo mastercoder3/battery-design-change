@@ -28,8 +28,9 @@ page-simulator-result {
     .span{
         font-size: 13px !important;
     }
-    .ion-item{
-        border-radius: 12px;
+    ion-item{
+        border-radius: 1px !important;
+        margin-top: 3px !important;
     }
     .buttonscontainer{
         background-color: black;

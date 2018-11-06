@@ -28,7 +28,7 @@
           <!-- <ion-item class="abc" text-center> -->
           <ion-searchbar [(ngModel)]="name" (ngModelChange)="onSearch($event)" name="name"></ion-searchbar><br>
           <ion-list *ngIf="coinComparsionName">
-            <ion-item class="label" *ngFor="let CCN of coinComparsionName">
+            <ion-item class="label" *ngFor="let CCN of coinComparsionName" (click)="getCoin(CCN.symbol)">
               {{CCN.name}}    
             </ion-item>
           </ion-list>
@@ -39,7 +39,7 @@
 
     <ion-grid style="width:100%">
 
-      <ion-list style=" width:100%" *ngIf="coinComparison">
+      <ion-list no-lines style=" width:100%">
 
           <ion-item  style="background-color: #FD592C; font-size: 13px !important">
          <ion-row>
@@ -68,7 +68,7 @@
          </ion-row>
         </ion-item>
 
-        <ion-item style="font-size: 11px !important" *ngFor="let CC of coinComparison">
+        <!-- <ion-item style="font-size: 11px !important" *ngFor="let CC of coinComparison">
             <ion-row>
               <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           
@@ -93,31 +93,31 @@
                       <div class="label1" style="background-color:#ADE2A2">{{CC.lowFactor}} x</div>
                    </ion-col>
             </ion-row>
-           </ion-item>
+           </ion-item> -->
 
-           <ion-item style="font-size: 11px !important">
-              <ion-row>
+           <ion-item style="font-size: 11px !important" *ngFor="let item of coinComparisonAddCoin" >
+              <ion-row  >
                 <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             
-                       <div class="label1">$54.23</div>
+                       <div class="label1">{{item.price}}</div>
                
                 </ion-col>
                 <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                 
-                   <div class="label1">$85.22     </div>
+                   <div class="label1">{{item.highestPrice}}</div>
            
                  </ion-col>
                 <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                      
-                    <div class="label1" style="background-color:#ADE2A2">1.57 x</div>
+                    <div class="label1" style="background-color:#ADE2A2">{{item.highFactor}} x</div>
                  </ion-col>
                    <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                    
-                  <div class="label1">$47.67</div>
+                  <div class="label1">{{item.lowestPrice}}</div>
                    </ion-col>
                      <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                    
-                        <div class="label1" style="background-color:#FFB9B9">0.88 x</div>
+                        <div class="label1" style="background-color:#FFB9B9">{{item.lowFactor}} x</div>
                      </ion-col>
               </ion-row>
              </ion-item>
@@ -127,14 +127,15 @@
 
           </ion-col>
           <ion-col  ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              <ion-item>
-                  <ion-label style="font-size:14px !important">Last 90 days</ion-label>
-                  <ion-select multiple="true">
-                    <ion-option>Last 60 days</ion-option>
-                    <ion-option>Last 30 days</ion-option>
-                    <ion-option>Last 10 days</ion-option>
-                    <ion-option>Last 5 days</ion-option>
-                    <ion-option>Last 2 days</ion-option>
+              <ion-item no-lines>
+                  <!-- <ion-label style="font-size:14px !important">{{input}}</ion-label> -->
+                  <ion-select multiple="true" [(ngModel)]="input" (ngModelChange)="onChange($event)" >
+                    <ion-option value="90">Last 90 days</ion-option>   
+                    <ion-option value="60">Last 60 days</ion-option>
+                    <ion-option value="30">Last 30 days</ion-option>
+                    <ion-option value="15">Last 15 days</ion-option>
+                    <ion-option value="7">Last 7 days</ion-option>
+                    <ion-option value="2">Last 2 days</ion-option>
                   </ion-select>
                 </ion-item>
             </ion-col>
