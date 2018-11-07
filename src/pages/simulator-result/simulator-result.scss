@@ -7,11 +7,6 @@ page-simulator-result {
         padding-top: 10px; 
     }
     
-    .searchbar-ios{
-        border:0px solid grey;
-        border-radius: 20px;
-        
-    }
     .abc{
        border-radius: 5px;
         
@@ -71,10 +66,7 @@ page-simulator-result {
         font-weight: bold !important;
         margin: 7px !important;
     }
-    .btn1-size{
-        font-size: 13px !important;
-        margin-top: 13px;
-    }
+    
     .symbol{
         height: 50px !important;
         background-color: white;
@@ -89,4 +81,15 @@ page-simulator-result {
        font-size: 25px;
        top:5px;
    }
+   .img{
+       height: 25px;
+       margin-left: 10px;
+
+   }
+   .btn1-size{
+    background-image: linear-gradient(to right, #0463CF 0%, #032786 71% 100%);
+}
+  .table-header{
+      background-image: linear-gradient(to right, #0570E0 0%, #044FB8 51%, #022A8C 100%);
+}
 }

@@ -18,7 +18,7 @@
 
                     </ion-col>
                     <ion-col ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                <button class="btn1-size" ion-button block default-button text-capitalize style="background:#034EB6" ><b>SIMULATOR</b></button><br>
+                <button class="btn1-size" ion-button block default-button text-capitalize ><b>SIMULATOR</b></button><br>
               
                     </ion-col>
                     <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
@@ -80,7 +80,7 @@
 
         <ion-list no-lines *ngIf="show" style=" width:100%">
 
-            <ion-item text-center style="background-color: #033598; font-size: 13px !important">
+            <ion-item class="table-header" text-center>
            <ion-row>
              <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
          
@@ -101,7 +101,10 @@
       
           <ion-item text-center *ngIf="simulatorResult">
               <ion-row>
-                <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                            <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+simulatorResult.logoid+".png"'>
+                     </ion-col>
+                <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             
                        <div class="label1">Price in USD</div>
                
@@ -120,7 +123,10 @@
       
              <ion-item text-center *ngIf="simulatorResult">
                 <ion-row>
-                  <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                 <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                     <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+simulatorResult.logoid+".png"'>
+                 </ion-col>
+                  <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
               
                          <div class="label1">Price in BTC</div>
                  
@@ -138,7 +144,10 @@
                </ion-item>
                <ion-item text-center *ngIf="simulatorResult">
                   <ion-row>
-                    <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                     <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                        <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+simulatorResult.logoid+".png"'>
+                     </ion-col>
+                    <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                 
                            <div class="label1">Market cap</div>
                    
@@ -156,7 +165,10 @@
                  </ion-item>
                  <ion-item text-center *ngIf="simulatorResult">
                     <ion-row>
-                      <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                         <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                             <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+simulatorResult.logoid+".png"'>
+                          </ion-col>
+                      <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                   
                              <div class="label1">Market share</div>
                      
@@ -174,7 +186,10 @@
                    </ion-item>
                    <ion-item text-center *ngIf="simulatorResult">
                         <ion-row>
-                          <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                             <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                 <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+simulatorResult.logoid+".png"'>
+                             </ion-col>
+                          <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                       
                                  <div class="label1">Rank</div>
                          
@@ -192,7 +207,10 @@
                        </ion-item>
                        <ion-item text-center *ngIf="simulatorResult">
                             <ion-row>
-                              <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                 <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                    <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/1.png"'>
+                                 </ion-col>
+                              <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                           
                                      <div class="label1">Price in USD</div>
                              
@@ -208,9 +226,12 @@
                        </ion-col>
                             </ion-row>
                            </ion-item>
-                           <ion-item text-center *ngIf="simulatorResult">
-                                <ion-row>
-                                  <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                         <ion-item text-center *ngIf="simulatorResult">
+                             <ion-row>
+                                 <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                      <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/1.png"'>
+                                 </ion-col>
+                                  <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                               
                                          <div class="label1">Market cap</div>
                                  
@@ -228,7 +249,10 @@
                                </ion-item>
                                <ion-item text-center *ngIf="simulatorResult">
                                     <ion-row>
-                                      <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                        <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                              <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+simulatorResult.logoid+".png"'>
+                                       </ion-col>
+                                      <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                                   
                                              <div class="label1">Altcoin market cap</div>
                                      
@@ -246,7 +270,10 @@
                                    </ion-item>
                                    <ion-item text-center *ngIf="simulatorResult">
                                         <ion-row>
-                                          <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                         <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                           <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+simulatorResult.logoid+".png"'>
+                                         </ion-col>
+                                          <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                                       
                                                  <div class="label1">Global market cap</div>
                                          
@@ -264,7 +291,10 @@
                                        </ion-item>
                                        <ion-item text-center *ngIf="simulatorResult">
                                             <ion-row>
-                                              <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                             <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                                 <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/1.png"'>
+                                             </ion-col>
+                                              <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                                           
                                                      <div class="label1">Market share</div>
                                              
@@ -296,17 +326,26 @@
               </ion-col >
             </ion-row>
             <ion-row class="xyz">
-              <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                   
+              <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                            
               </ion-col>
-              
-                  <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <img class="img" [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+simulatorSummary.logoid+".png"'> 
+              </ion-col>
+
+              <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                            
+              </ion-col>
+                  <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                     <span span-medium style="color:#88C765">Versus</span>
                   </ion-col>
-                  
-                      <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                           
-                      </ion-col>
+
+                  <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                            
+                 </ion-col>
+                 <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                        <img class="img" [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/1.png"'>
+                </ion-col>
             </ion-row><br>
             <ion-row>
                 <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
@@ -346,15 +385,15 @@
             </ion-col >
           </ion-row>
           <ion-row class="xyz">
-            <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-col ion-col text-center no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                  
             </ion-col>
             
-                <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                  <span span-medium style="color:#FF9999">:)</span>
+                <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                      <img class="img" [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+simulatorSummary.logoid+".png"'>
                 </ion-col>
                 
-                    <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <ion-col ion-col text-center no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                          
                     </ion-col>
           </ion-row><br>
@@ -381,15 +420,15 @@
             </ion-col >
           </ion-row>
           <ion-row class="xyz">
-            <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-col ion-col text-center no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                  
             </ion-col>
             
-                <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                  <span span-medium style="color:#008BFF">:)</span>
+                <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <img class="img" [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+simulatorSummary.logoid+".png"'>
                 </ion-col>
                 
-                    <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <ion-col ion-col text-center no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                          
                     </ion-col>
           </ion-row><br>
@@ -456,8 +495,8 @@
       <ion-fab right bottom>
         <button ion-fab color="light" style="background-color:#C0C0C0"><ion-icon name="add"></ion-icon></button>
         <ion-fab-list side="top">
-          <button ion-fab (click)="ClickToHomePage()" style="background-color:#A9A9A9"><ion-icon name="keypad-outline"></ion-icon></button>
-          <button ion-fab (click)="clickToAccountPage()" style="background-color:#A9A9A9"><ion-icon name="bulb-outline"></ion-icon></button>
+          <button ion-fab (click)="ClickToHomePage()" style="background-color:#A9A9A9; color: white"><ion-icon name="keypad-outline"></ion-icon></button>
+          <button ion-fab (click)="clickToAccountPage()" style="background-color:#A9A9A9; color: white"><ion-icon name="bulb-outline"></ion-icon></button>
           
         </ion-fab-list>
       </ion-fab>

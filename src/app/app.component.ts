@@ -11,7 +11,7 @@ import { SimulatorResultPage } from '../pages/simulator-result/simulator-result'
 import { AccountPage } from '../pages/account/account';
 import { FaqPage } from '../pages/faq/faq';
 import { ContactPage } from '../pages/contact/contact';
-import { LogoutPage } from '../pages/logout/logout';
+
 import { ApiServiceProvider } from '../providers/api-service/api-service';
 
 @Component({
@@ -22,7 +22,7 @@ export class MyApp implements OnInit {
 
   rootPage: any = LoginPage;
 
-  pages: Array<{title: string, component: any}>;
+  pages;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private api:ApiServiceProvider) {
     this.initializeApp();
@@ -32,15 +32,24 @@ export class MyApp implements OnInit {
       { title: 'Account', component: AccountPage },
       { title: 'FAQ', component: FaqPage },
       { title: 'Contact', component: ContactPage },
-      { title: 'Logout', component: LogoutPage }
+      { title: 'Logout' }
       // { title: 'List', component: ListPage }
     ];
+
+    if(localStorage.getItem('uid')){
+      this.rootPage = HomePage;
+    }
 
   }
 
   ngOnInit(){
     
     
+  }
+
+  logout(){
+    localStorage.removeItem('uid');
+   this.nav.setRoot(LoginPage);
   }
 
 
@@ -56,6 +65,9 @@ export class MyApp implements OnInit {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    if(page.title !== 'Logout')
+      this.nav.setRoot(page.component);
+    else  
+      this.logout();
   }
 }

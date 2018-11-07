@@ -10,7 +10,7 @@
   </ion-header>
 
   
-<ion-content>
+<ion-content padding>
 
     <ion-grid >
         <ion-row >
@@ -18,18 +18,19 @@
 
               </ion-col>
               <ion-col ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-          <button class="btn1-size" ion-button block default-button text-capitalize style="background:#FA6728" ><b>COIN COMPARISON</b></button><br>
+          <button class="btn1-size" ion-button block default-button text-capitalize><b>COIN COMPARISON</b></button><br>
         
               </ion-col>
               <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         
                 </ion-col>
-      <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              
+      <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 >
           <!-- <ion-item class="abc" text-center> -->
           <ion-searchbar [(ngModel)]="name" (ngModelChange)="onSearch($event)" name="name"></ion-searchbar><br>
           <ion-list *ngIf="coinComparsionName">
-            <ion-item class="label" *ngFor="let CCN of coinComparsionName" (click)="getCoin(CCN.symbol)">
-              {{CCN.name}}    
+            <ion-item no-lines class="label" *ngFor="let CCN of coinComparsionName" (click)="getCoin(CCN.symbol)">
+                <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+CCN.logoid+".png"'> {{CCN.name}}    
             </ion-item>
           </ion-list>
           <!-- </ion-item> -->
@@ -41,7 +42,7 @@
 
       <ion-list no-lines style=" width:100%">
 
-          <ion-item  style="background-color: #FD592C; font-size: 13px !important">
+          <ion-item class="table-header">
          <ion-row>
            <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
        
@@ -97,7 +98,10 @@
 
            <ion-item style="font-size: 11px !important" *ngFor="let item of coinComparisonAddCoin" >
               <ion-row  >
-                <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                      <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+item.logoid+".png"'>
+                    </ion-col>
+                <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             
                        <div class="label1">{{item.price}}</div>
                
@@ -129,7 +133,7 @@
           <ion-col  ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
               <ion-item no-lines>
                   <!-- <ion-label style="font-size:14px !important">{{input}}</ion-label> -->
-                  <ion-select multiple="true" [(ngModel)]="input" (ngModelChange)="onChange($event)" >
+                  <ion-select multiple="false" [(ngModel)]="input" (ngModelChange)="onChange($event)" >
                     <ion-option value="90">Last 90 days</ion-option>   
                     <ion-option value="60">Last 60 days</ion-option>
                     <ion-option value="30">Last 30 days</ion-option>
@@ -148,8 +152,8 @@
       <ion-fab right bottom>
         <button ion-fab color="light" style="background-color:#C0C0C0"><ion-icon name="add"></ion-icon></button>
         <ion-fab-list side="top">
-          <button ion-fab (click)="ClickToHomePage()" style="background-color:#A9A9A9"><ion-icon name="keypad-outline"></ion-icon></button>
-          <button ion-fab (click)="clickToAccountPage()" style="background-color:#A9A9A9"><ion-icon name="bulb-outline"></ion-icon></button>
+          <button ion-fab (click)="ClickToHomePage()" style="background-color:#A9A9A9; color: white"><ion-icon name="keypad-outline"></ion-icon></button>
+          <button ion-fab (click)="clickToAccountPage()" style="background-color:#A9A9A9; color: white"><ion-icon name="bulb-outline"></ion-icon></button>
           
         </ion-fab-list>
       </ion-fab>

@@ -8,11 +8,6 @@ page-growth-calculator-result {
         padding-top: 10px; 
     }
     
-    .searchbar-ios{
-        border:0px solid grey;
-        border-radius: 20px;
-        
-    }
     .label{
         color:white;
     }
@@ -20,10 +15,7 @@ page-growth-calculator-result {
         color: black;
         font-size: 13px;
     }
-    .btn1-size{
-        font-size: 13px !important;
-        margin-top: 13px;
-    }
+    
     .symbol{
         height: 50px !important;
         background-color: white;
@@ -42,5 +34,10 @@ page-growth-calculator-result {
     border-radius: 1px !important;
     margin-top: 2px !important;
 }
-
+.btn1-size{
+    background-image: linear-gradient(to right, #5FB236 0%, #8ACD50 61% 100%);
+}
+.table-header{
+    background-image: linear-gradient(to right, #5FB236 0%, #7BC346 51%, #9DD95C 100%);
+}
 }

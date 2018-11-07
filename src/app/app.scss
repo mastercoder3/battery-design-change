@@ -20,6 +20,7 @@ ion-content{
 ion-header{
 background: black;
 }
+
 .item-ios {
    
     border: 0px;
@@ -77,4 +78,19 @@ a.item-ios:not([detail-none]) .item-inner {
     position: relative;
     left: 46%;
     
+}
+.table-header{
+    font-size: 13px !important;
+}
+
+.btn1-size{
+    font-size: 13px !important;
+}
+.searchbar-ios{
+    border:0px solid grey;
+    border-radius: 20px;
+    
+}
+.slide{
+    height: 200px !important;
 }

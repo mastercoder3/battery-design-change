@@ -12,11 +12,7 @@ ion-content{
 }
 
 
-.searchbar-ios{
-    border:0px solid grey;
-    border-radius: 20px;
-    
-}
+
 .abc{
    border-bottom:  1px dashed #5daf33 !important;
     
@@ -25,12 +21,16 @@ ion-content{
     background-color: white;
     border-radius: 20px;
     
-
 }
 .btn1-size{
-    font-size: 13px !important;
+    background-image: linear-gradient(to right, #5FB236 0%, #8ACD50 61% 100%);
 }
+
 .span{
     font-size: 10px;
 }
+// .coins{
+//     font-size: 10px;
+// }
+
 }

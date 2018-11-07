@@ -4,11 +4,7 @@ page-market-prices {
     }
     
     
-    .searchbar-ios{
-        border:0px solid grey;
-        border-radius: 20px;
-        
-    }
+    
     .abc{
        border-radius: 5px;
         
@@ -29,8 +25,10 @@ page-market-prices {
         margin-top: 3px !important;
     }
     .btn1-size{
-        font-size: 13px !important;
-        margin-top: 16px;
+        background-image: linear-gradient(to right, #BC2E65 0%, #843881 51% 100%);
+    }
+    .table-header{
+        background-image: linear-gradient(to right, #BF2C62 0%, #9C3274 51%, #7A3985 100%);
     }
     
 }

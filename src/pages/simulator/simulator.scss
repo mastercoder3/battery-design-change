@@ -3,12 +3,6 @@ page-simulator {
         background:#DDDDDD !important;
     }
     
-    
-    .searchbar-ios{
-        border:0px solid grey;
-        border-radius: 20px;
-        
-    }
     .abc{
        border-bottom:  1px dashed #405bb6 !important;
         
@@ -19,17 +13,15 @@ page-simulator {
         
     
     }
-    .btn1-size{
-        font-size: 13px !important;
-    }
+    
     ion-card-title{
         font-size: 15px !important;
     }
     .oo{
         font-size: 10px !important;
     }
-    .slide{
-        height: 200px !important;
+    .btn1-size{
+        background-image: linear-gradient(to right, #0463CF 0%, #032786 71% 100%);
     }
 
 }

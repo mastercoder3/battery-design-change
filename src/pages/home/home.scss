@@ -20,12 +20,19 @@ page-home {
         [ion-button]{
             height: 70px !important;
         }
-    // .btn-size{
-    //     margin-top: 20px;
-    //     height: 75px !important;
-    //     width: 330px;
-    //     margin-left: 15px;
-    // }
+    .btn1-color{
+      background-image: linear-gradient(to right, #5FB236 0%, #7BC346 51%, #9DD95C 100%);
+    }
+    .btn2-color{
+      background-image: linear-gradient(to right, #0570E0 0%, #044FB8 51%, #022A8C 100%);
+    }
+    .btn3-color{
+      background-image: linear-gradient(to right, #FD552D 0%, #F77224 51%, #EF931A 100%);
+    }
+    .btn4-color{
+      background-image: linear-gradient(to right, #BF2C62 0%, #9C3274 51%, #7A3985 100%);
+    }
+
     ion-grid,
          ion-row {
            height: 100%;

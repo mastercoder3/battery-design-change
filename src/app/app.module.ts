@@ -21,7 +21,6 @@ import { MarketPricesPage } from '../pages/market-prices/market-prices';
 import { AccountPage } from '../pages/account/account';
 import { FaqPage } from '../pages/faq/faq';
 import { ContactPage } from '../pages/contact/contact';
-import { LogoutPage } from '../pages/logout/logout';
 import { ApiServiceProvider } from '../providers/api-service/api-service';
 import { DecimalPipe } from '@angular/common';
 import {MillionPipe} from './../million';
@@ -45,7 +44,7 @@ import { HelperProvider } from '../providers/helper/helper';
     AccountPage,
     FaqPage,
     ContactPage,
-    LogoutPage
+  
   ],
   imports: [
     BrowserModule,
@@ -70,7 +69,7 @@ import { HelperProvider } from '../providers/helper/helper';
     AccountPage,
     FaqPage,
     ContactPage,
-    LogoutPage
+  
   ],
   providers: [
     StatusBar,

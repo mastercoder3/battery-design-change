@@ -40,6 +40,8 @@ export class LoginPage {
       .subscribe(res => {
         if(res){
           this.id = res;
+          if(this.id.iduser)
+            localStorage.setItem('uid',this.id.iduser);
           this.navCtrl.setRoot(HomePage);
         }
         else{
