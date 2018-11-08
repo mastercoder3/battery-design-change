@@ -15,7 +15,7 @@ import { HomePage } from '../home/home';
   templateUrl: 'account.html',
 })
 export class AccountPage {
-
+  Acc_profile;
   buttonclass1 = "custombutton1"
   buttonclass2 = "custombutton2"
   buttonclass3 = "custombutton3"
@@ -24,6 +24,7 @@ export class AccountPage {
   show=true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.Acc_profile="profile";
   }
 
   ionViewDidLoad() {

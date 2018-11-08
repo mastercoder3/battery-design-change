@@ -39,12 +39,12 @@
 
           <ion-item class="table-header" >
          <ion-row>
-           <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+           <ion-col ion-col text-left no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
        
                   <div class="label">Rank</div>
           
            </ion-col>
-           <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+           <ion-col ion-col text-left no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
            
               <div class="label">Name</div>
       
@@ -53,11 +53,11 @@
                 
                <div class="label">Market Cap</div>
             </ion-col>
-              <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <ion-col ion-col text-right no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
               
              <div class="label">Price</div>
               </ion-col>
-                <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-col ion-col text-right no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
               
                    <div class="label">24h</div>
                 </ion-col>
@@ -66,26 +66,26 @@
 
         <ion-item class="ion-item" style="font-size: 11px !important"  *ngFor="let mk of marketPrices"> 
             <ion-row>
-              <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           
                      <div class="label1">{{mk.rank}}</div>
              
               </ion-col>
-              <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                <ion-icon><img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+mk.logoid+".png"'></ion-icon>
               </ion-col>
-              <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <ion-col ion-col text-left no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
               
                  <div class="label1">{{mk.name}}</div>
          
                </ion-col>
               <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                    
-                  <div class="label1">{{mk.market_cap_usd}}</div>
+                  <div class="label1">{{mk.market_cap_usd }}</div>
                </ion-col>
                  <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                  
-                <div class="label1">{{mk.price_usd}}</div>
+                <div class="label1">{{mk.price_usd | currency:'USD':true:'1.2-2'}}</div>
                  </ion-col>
                    <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                  

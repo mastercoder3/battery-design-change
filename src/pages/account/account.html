@@ -27,21 +27,21 @@
 
        <div class="login_tabs">
           <ion-segment [(ngModel)]="Acc_profile">
-            <ion-segment-button value="profile">
+            <ion-segment-button class="segment-btn" value="profile">
             Profile
             </ion-segment-button>
-            <ion-segment-button value="credits">
+            <ion-segment-button class="segment-btn" value="credits">
             Credits
             </ion-segment-button>
-            <ion-segment-button value="referrals">
+            <ion-segment-button class="segment-btn" value="referrals">
                 Referrals
             </ion-segment-button>
-            <ion-segment-button value="version">
+            <ion-segment-button class="segment-btn" value="version">
                 Version
                 </ion-segment-button>
             </ion-segment>
       </div>
-      <div [ngSwitch]="Acc_profile" class="Profile" padding class="page-color">
+      <div [ngSwitch]="Acc_profile" class="Profile" padding class="page-color" default>
         <div *ngSwitchCase="'profile'">
          <ion-grid>
            <ion-row>
