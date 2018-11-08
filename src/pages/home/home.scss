@@ -17,20 +17,24 @@ page-home {
         .abc{
             background-color: #201D1D;
         }
-        [ion-button]{
-            height: 70px !important;
-        }
+        // [ion-button]{
+        //     height: 70px !important;
+        // }
     .btn1-color{
       background-image: linear-gradient(to right, #5FB236 0%, #7BC346 51%, #9DD95C 100%);
+      height: 75px !important;
     }
     .btn2-color{
       background-image: linear-gradient(to right, #0570E0 0%, #044FB8 51%, #022A8C 100%);
+      height: 75px !important;
     }
     .btn3-color{
       background-image: linear-gradient(to right, #FD552D 0%, #F77224 51%, #EF931A 100%);
+      height: 75px !important;
     }
     .btn4-color{
       background-image: linear-gradient(to right, #BF2C62 0%, #9C3274 51%, #7A3985 100%);
+      height: 75px !important;
     }
 
     ion-grid,
@@ -91,7 +95,7 @@ page-home {
          }
 
            [login-title] {
-             margin-right: 30%;
+            //  margin-right: 30%;
              color: color($loginPage, login-title-logo-2);
            }
 

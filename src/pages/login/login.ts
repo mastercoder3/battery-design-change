@@ -36,16 +36,20 @@ export class LoginPage {
   }
 
   login(form){
+    this.helper.presentLoadingDefault();
     this.api.login(form.value.email,form.value.password)
       .subscribe(res => {
         if(res){
           this.id = res;
           if(this.id.iduser)
             localStorage.setItem('uid',this.id.iduser);
+          this.helper.closeLoading();
           this.navCtrl.setRoot(HomePage);
+          
         }
         else{
             this.helper.presentToast('Invalid Email or Password.');
+            this.helper.closeLoading();
         }
 
         

@@ -35,6 +35,7 @@ export class GrowthCalculatorResultPage {
     console.log(this.multi);
     this.searchCode = this.navParams.get('name');
     
+    
   }
 
   ngOnInit(){

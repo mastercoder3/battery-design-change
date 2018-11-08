@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ToastController } from 'ionic-angular';
+import { ToastController, LoadingController } from 'ionic-angular';
 
 /*
   Generated class for the HelperProvider provider.
@@ -10,8 +10,10 @@ import { ToastController } from 'ionic-angular';
 */
 @Injectable()
 export class HelperProvider {
+  
+  loading;
 
-  constructor(private toastCtrl: ToastController ) { }
+  constructor(private toastCtrl: ToastController, public loadingCtrl: LoadingController ) { }
 
   
   presentToast(msg) {
@@ -22,6 +24,19 @@ export class HelperProvider {
     });
   
     toast.present();
+  }
+  presentLoadingDefault() {
+    this.loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+  
+    this.loading.present();
+  
+
+  }
+
+  closeLoading(){
+    this.loading.dismiss();
   }
 
 }
