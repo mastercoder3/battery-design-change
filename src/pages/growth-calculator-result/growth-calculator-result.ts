@@ -25,6 +25,8 @@ export class GrowthCalculatorResultPage {
   multi;
   growthCalculatorResult;
   searchCode;
+  searchCode1;
+  searchCode2;
   usd;
   btc;
   cap;
@@ -32,8 +34,10 @@ export class GrowthCalculatorResultPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiServiceProvider) {
     this.multi = this.navParams.get('multi');
-    console.log(this.multi);
     this.searchCode = this.navParams.get('name');
+    this.searchCode1 = this.navParams.get('Fullname');
+    this.searchCode2 = this.navParams.get('logo');
+    console.log(this.searchCode2);
     
     
   }

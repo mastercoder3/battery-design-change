@@ -26,6 +26,8 @@ export class SimulatorResultPage {
   multi3;
   multi4;
   searchCode;
+  searchCode1;
+  searchCode2;
   buttonclass1 = "custombutton1"
   buttonclass2 = "custombutton2"
   show=true;
@@ -37,6 +39,8 @@ export class SimulatorResultPage {
     this.multi3 = this.navParams.get('multi3');
     this.multi4 = this.navParams.get('multi4');
     this.searchCode = this.navParams.get('name');
+    this.searchCode1 = this.navParams.get('Fullname');
+    this.searchCode2 = this.navParams.get('logo');
   }
 
 ngOnInit(){

@@ -18,7 +18,7 @@
 
                 </ion-col>
                 <ion-col ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            <button class="btn1-size" ion-button block default-button text-capitalize><b>SIMULATOR</b></button><br>
+                    <div class="btn1-size" text-capitalize >SIMULATOR</div><br>
           
                 </ion-col>
                 <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
@@ -26,7 +26,32 @@
                   </ion-col>
     <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <!-- <ion-item class="abc" text-center> -->
-            <ion-searchbar [(ngModel)]="name" (ngModelChange)="onSearch($event)" name="name"></ion-searchbar>
+            <ion-searchbar [(ngModel)]="name" *ngIf="isShown" (ngModelChange)="onSearch($event)" name="name" placeholder="Select an altcoin to begin"></ion-searchbar>
+            <div *ngIf="isShownLogo" style="height: 60px !important; background-color: white !important; border-radius: 10px;" >
+                    <ion-row>
+                        <ion-col ion-col text-center no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                            
+                         </ion-col>
+                      <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <img style="position:relative; top:10px; font-size: 15px;" src="https://s2.coinmarketcap.com/static/img/coins/16x16/{{search?.image}}.png" >
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col ion-col text-center no-padding col-2 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            
+                      </ion-col>
+                    <ion-col ion-col text-center no-padding col-7 col-sm-7 col-md-7 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <h4 style="margin-top:10px;">{{search?.name}} ({{search?.symbol}})</h4>
+                    </ion-col>
+                    <ion-col ion-col text-center no-padding col-1 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            
+                      </ion-col>
+                    <ion-col ion-col text-right no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <ion-icon name="close" id="iconCross" (click)="clickBackToSimulator()" style="margin-top:2px; color:#CECECE; font-size:25px;"></ion-icon>
+                   </ion-col>
+                    </ion-row>
+                  </div>
+
             <ion-list *ngIf="simulator" >
               <ion-item no-lines (click)="getSimulator(GC.symbol)" class="label"  *ngFor="let GC of simulator">
                  <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+GC.logoid+".png"'> {{GC.name}}    
@@ -41,7 +66,7 @@
         <ion-slide text-center style="Background-color:white">
     
             <ion-row class="abc" *ngIf="simulator1"> 
-                <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                     <ion-card-title text-center style="color:#0059B3"><b>{{simulator1.rank}}</b></ion-card-title>
                   <span class="oo" span-medium style="color:#5BABFB">Rank</span>
                 </ion-col>
@@ -49,7 +74,7 @@
                     <ion-card-title text-center style="color:#0059B3"><b>{{simulator1.priceInUSD}}</b></ion-card-title>
                     <span class="oo" span-medium style="color:#5BABFB">Price in USD</span>
                 </ion-col>
-                <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                     <ion-card-title text-center style="color:#0059B3"><b>{{simulator1.marketCap}}</b></ion-card-title>
                     <span class="oo" span-medium style="color:#5BABFB">Market Cap</span>
                 </ion-col>
@@ -58,12 +83,12 @@
               
               
               
-          <p wizard-description padding style="color:#5BABFB; font-size: 18px !important">Enter your growth expectation for this coin. If you think the <b>price</b> will double enter 2 below.</p>
+          <p wizard-description padding style="color:#5BABFB; font-size: 18px !important">Enter your growth expectation for this coin. If you think the <b style="color:#0059B3">price</b> will double enter 2 below.</p>
         </ion-slide>
         <ion-slide text-center style="Background-color:white">
     
             <ion-row class="abc" *ngIf="simulator2">
-                <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                     <ion-card-title text-center style="color:#0059B3"><b>{{simulator2.rankNew}}</b></ion-card-title>
                   <span class="oo" span-medium style="color:#5BABFB">New rank</span>
                 </ion-col>
@@ -71,7 +96,7 @@
                     <ion-card-title text-center style="color:#0059B3"><b>{{simulator2.priceInUSDNew}}</b></ion-card-title>
                     <span class="oo" span-medium style="color:#5BABFB">New price</span>
                 </ion-col>
-                <ion-col ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                     <ion-card-title text-center style="color:#0059B3"><b>{{simulator2.marketCapNew}}</b></ion-card-title>
                     <span class="oo" span-medium style="color:#5BABFB">New market cap</span>
                 </ion-col>
@@ -80,7 +105,7 @@
               
               
               
-          <p wizard-description padding style="color:#5BABFB; font-size: 18px !important">In how many months do you think this <b>new price</b> might take place?</p>
+          <p wizard-description padding style="color:#5BABFB; font-size: 18px !important">In how many months do you think this <b style="color:#0059B3">new price</b> might take place?</p>
         </ion-slide>
         <ion-slide text-center style="Background-color:white">
     
@@ -102,7 +127,7 @@
               
               
               
-          <p wizard-description padding style="color:#5BABFB; font-size: 18px !important">How do you think the <b>global market cap</b> will grow in 3 months? If you think it will triple enter 3 below.</p>
+          <p wizard-description padding style="color:#5BABFB; font-size: 18px !important">How do you think the <b style="color:#0059B3">global market cap</b> will grow in 3 months? If you think it will triple enter 3 below.</p>
         </ion-slide>
         <ion-slide text-center style="Background-color:white">
     
@@ -121,7 +146,7 @@
               
               
               
-          <p wizard-description padding style="color:#5BABFB; font-size: 18px !important">What percentage do you expect <b>BTC's market share</b> to be in 3 months? If you think it will be 25% enter 25 below.</p>
+          <p wizard-description padding style="color:#5BABFB; font-size: 18px !important">What percentage do you expect <b style="color:#0059B3">BTC's market share</b> to be in 3 months? If you think it will be 25% enter 25 below.</p>
         </ion-slide>
       </ion-slides>
 

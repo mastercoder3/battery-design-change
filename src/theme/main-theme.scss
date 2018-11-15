@@ -1014,6 +1014,8 @@ $alert-md-radio-label-text-color-checked: theme-colors('textColors', 'accent') !
 
 $alert-md-radio-border-color-off: theme-colors('mainColors', 'accentLight') !important;
 $alert-md-radio-border-color-on: theme-colors('textColors', 'accent') !important;
+$alert-md-button-group-justify-content: center !important;
+$alert-md-head-padding: null !important;
 
 
 // For Ios

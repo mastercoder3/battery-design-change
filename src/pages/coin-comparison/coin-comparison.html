@@ -18,7 +18,7 @@
 
               </ion-col>
               <ion-col ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-          <button class="btn1-size" ion-button block default-button text-capitalize><b>COIN COMPARISON</b></button><br>
+                <div class="btn1-size" text-capitalize >COIN COMPARISON</div><br>
         
               </ion-col>
               <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
@@ -27,8 +27,8 @@
               
       <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 >
           <!-- <ion-item class="abc" text-center> -->
-          <ion-searchbar [(ngModel)]="name" (ngModelChange)="onSearch($event)" name="name"></ion-searchbar><br>
-          <ion-list *ngIf="coinComparsionName">
+          <ion-searchbar [(ngModel)]="name" (ngModelChange)="onSearch($event)" name="name" placeholder="Select an altcoin to begin"></ion-searchbar><br>
+          <ion-list *ngIf="coinComparsionName" style="position:relative; bottom: 15px;">
             <ion-item no-lines class="label" *ngFor="let CCN of coinComparsionName" (click)="getCoin(CCN.symbol)">
                 <img [src]='"https://s2.coinmarketcap.com/static/img/coins/16x16/"+CCN.logoid+".png"'> {{CCN.name}}    
             </ion-item>
@@ -103,7 +103,7 @@
                     </ion-col>
                 <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             
-                       <div class="label1">{{item.price}}</div>
+                       <div class="label1"><b>{{item.price}}</b></div>
                
                 </ion-col>
                 <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
@@ -137,9 +137,8 @@
                     <ion-option value="90">Last 90 days</ion-option>   
                     <ion-option value="60">Last 60 days</ion-option>
                     <ion-option value="30">Last 30 days</ion-option>
-                    <ion-option value="15">Last 15 days</ion-option>
                     <ion-option value="7">Last 7 days</ion-option>
-                    <ion-option value="2">Last 2 days</ion-option>
+                    <ion-option value="2">Last 3 days</ion-option>
                   </ion-select>
                 </ion-item>
             </ion-col>

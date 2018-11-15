@@ -23,6 +23,20 @@ page-simulator {
     }
     .btn1-size{
         background-image: linear-gradient(to right, #0463CF 0%, #032786 71% 100%);
+        height: 40px;
+        border-radius: 20px;
+        color: white;
+        padding-top: 12px;
+    }
+    ion-searchbar{
+        ::placeholder{
+            font-size: 14px;
+            letter-spacing: -0.7px;
+            font-weight: bold;
+        }
+    }
+    .alert-md .alert-head{
+        padding: 0px !important;
     }
 
 }

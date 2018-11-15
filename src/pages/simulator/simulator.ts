@@ -24,8 +24,18 @@ import { HelperProvider } from '../../providers/helper/helper';
 export class SimulatorPage {
 
   @ViewChild('slides') slides: Slides;
+
+  isShown: boolean;
+  isShownLogo: boolean;
   simulator;
   name;
+  Fullname;
+  logo;
+  search = {
+    image: '',
+    name: '',
+    symbol:''
+  }
   simulator1;
   simulator2;
   simulator3;
@@ -37,10 +47,12 @@ export class SimulatorPage {
   showButton: boolean = false;
   end: boolean =false;
   lock:any;
+
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiServiceProvider, private helper: HelperProvider) {
-    
+    this.isShown = true;
+    this.isShownLogo = false;
   }
 
   getCoinComparisonName(name){
@@ -68,12 +80,18 @@ export class SimulatorPage {
       this.name = "";
     }else{
     this.name = name;
+    let x = this.simulator.filter(data => data.symbol === name);
+    this.search.name = x[0].name;
+    this.search.image = x[0].logoid;
+    this.search.symbol = x[0].symbol;
    this.api.getSimulatorSlider1(this.name).subscribe((data) =>{
      this.simulator1 = data
      if(this.simulator1){
        this.showSlider = true;
        this.showbutton = true;
        this.simulator = false;
+       this.isShown = false;
+       this.isShownLogo = true;
 
       setTimeout( () => {
         this.slides.lockSwipes(true);
@@ -121,7 +139,9 @@ export class SimulatorPage {
         multi2:this.input[1],
         multi3:this.input[2],
         multi4:this.input[3],
-        name: this.name
+        name: this.search.symbol,
+        Fullname: this.search.name,
+        logo: this.search.image
       });  
     }
     
@@ -137,6 +157,9 @@ export class SimulatorPage {
   }
   clickToAccountPage(){
     this.navCtrl.setRoot(AccountPage);
+  }
+  clickBackToSimulator(){
+    this.navCtrl.setRoot(SimulatorPage);
   }
 
   backButton(){

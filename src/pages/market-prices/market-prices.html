@@ -18,7 +18,7 @@
 
               </ion-col>
               <ion-col ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-          <button class="btn1-size" ion-button block default-button text-capitalize><b>MARKET PRICES</b></button><br>
+                <div class="btn1-size" text-capitalize>MARKET PRICES</div><br>
         
               </ion-col>
               <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
@@ -39,25 +39,35 @@
 
           <ion-item class="table-header" >
          <ion-row>
-           <ion-col ion-col text-left no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+           <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
        
                   <div class="label">Rank</div>
           
            </ion-col>
-           <ion-col ion-col text-left no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+           <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+      
+       </ion-col>
+           <ion-col ion-col text-left no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
            
               <div class="label">Name</div>
       
             </ion-col>
-           <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+      
+              </ion-col>
+           <ion-col ion-col text-left no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                 
                <div class="label">Market Cap</div>
             </ion-col>
-              <ion-col ion-col text-right no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+      
+              </ion-col>
+              <ion-col ion-col text-left no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
               
              <div class="label">Price</div>
               </ion-col>
-                <ion-col ion-col text-right no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              
+                <ion-col ion-col text-left no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
               
                    <div class="label">24h</div>
                 </ion-col>
@@ -76,18 +86,19 @@
               </ion-col>
               <ion-col ion-col text-left no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
               
-                 <div class="label1">{{mk.name}}</div>
+                 <div class="label1"><b>{{mk.name}}</b></div>
          
                </ion-col>
-              <ion-col ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <ion-col ion-col text-left no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                    
                   <div class="label1">{{mk.market_cap_usd }}</div>
                </ion-col>
-                 <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                 <ion-col ion-col text-left no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                  
                 <div class="label1">{{mk.price_usd | currency:'USD':true:'1.2-2'}}</div>
                  </ion-col>
-                   <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                 
+                   <ion-col ion-col text-left no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                  
                       <div class="label1">{{mk.percent_change_24h}}</div>
                    </ion-col>

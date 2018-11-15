@@ -20,14 +20,28 @@ import { HelperProvider } from '../../providers/helper/helper';
 })
 export class GrowthCalculatorPage {
 
+  isShown: boolean;
+  isShownLogo: boolean;
   growthCalculator;
   growthCalculator1;
   showCard: boolean = false;
   showbutton: boolean = false;
+  showButton: boolean =false;
+  factor;
   input:string='';
   name;
+  Fullname;
+  logo;
+  search = {
+    image: '',
+    name: '',
+    symbol:''
+  }
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private api:ApiServiceProvider, private helper: HelperProvider) {
+    this.isShown = true;
+    this.isShownLogo = false;
   }
 
   ionViewDidLoad() {
@@ -54,13 +68,21 @@ export class GrowthCalculatorPage {
   }
 
   getGrowthCalculator(name){
+
     this.name = name;
+    let x = this.growthCalculator.filter(data => data.symbol === name);
+    this.search.name = x[0].name;
+    this.search.image = x[0].logoid;
+    this.search.symbol = x[0].symbol;
+    console.log(this.search)
    this.api.getGrowthCalculator(name).subscribe((data) =>{
      this.growthCalculator1 = data
      if(this.growthCalculator1){
        this.showCard = true;
        this.showbutton = true;
        this.growthCalculator = false;
+       this.isShown = false;
+       this.isShownLogo = true;
      }
       
    })
@@ -73,7 +95,9 @@ export class GrowthCalculatorPage {
     }else{
     this.navCtrl.push(GrowthCalculatorResultPage,{
       multi: this.input,
-      name: this.name
+      name: this.search.symbol,
+      Fullname: this.search.name,
+      logo: this.search.image
     });
   }}
   ClickToHomePage(){
@@ -81,6 +105,19 @@ export class GrowthCalculatorPage {
   }
   clickToAccountPage(){
     this.navCtrl.setRoot(AccountPage);
+  }
+  clickBackToGrowth(){
+    this.navCtrl.setRoot(GrowthCalculatorPage);
+  }
+  inputFocus(){
+    this.showButton = true;
+  }
+
+  inputBlur(){
+    if(this.factor !== '')
+    this.showButton = true;
+    else
+    this.showButton = false
   }
 
 }
