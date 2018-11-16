@@ -24,7 +24,7 @@ export class FaqPage {
     "items": [
         {
             "id": 1,
-            "title": "What is the source of our data?",
+            "title": "What is the source of our data?" ,
             "icon": "icon-chevron-right",
             "expandItems": [
               {

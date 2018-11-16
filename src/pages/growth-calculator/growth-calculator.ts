@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { GrowthCalculatorResultPage } from '../growth-calculator-result/growth-calculator-result';
 import { HomePage } from '../home/home';
 import { AccountPage } from '../account/account';
 import { ApiServiceProvider } from '../../providers/api-service/api-service';
 import { HelperProvider } from '../../providers/helper/helper';
+import { AnimationBuilder, AnimationService } from 'css-animator';
 
 /**
  * Generated class for the GrowthCalculatorPage page.
@@ -37,11 +38,42 @@ export class GrowthCalculatorPage {
     name: '',
     symbol:''
   }
+   
+
+ 
+  @ViewChild('myelement',{ read: ElementRef }) myElem: ElementRef;
+  private animator: AnimationBuilder;
   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private api:ApiServiceProvider, private helper: HelperProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private api:ApiServiceProvider, private helper: HelperProvider,animationService: AnimationService) {
     this.isShown = true;
     this.isShownLogo = false;
+    this.animator = animationService.builder();
+ 
+    
+  }
+
+  animateElem(){
+
+    console.log(this.myElem.nativeElement);
+
+   
+  }
+
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+    this.animator.duration = 2900;
+    this.animator.type = 'flash';
+    this.animator.addAnimationClass('infinite');
+    this.animator.iterationCount=100
+    // this.animator.applyIterationCount(this.myElem.nativeElement,500);
+    this.animator.show(this.myElem.nativeElement);
+
+
+   
+
+   
   }
 
   ionViewDidLoad() {

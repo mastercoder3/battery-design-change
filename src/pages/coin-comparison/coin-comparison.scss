@@ -46,5 +46,10 @@ page-coin-comparison {
             font-weight: bold;
         }
     }
-    
+    .select-text{
+        text-overflow: initial !important;
+    }
+    .myCustomSelect{
+        max-width: 100% !important;
+       }
 }

@@ -16,13 +16,13 @@ export class HomePage {
   }
 
   ClickToGrowth(){
-    this.navCtrl.push(GrowthCalculatorPage);
+    this.navCtrl.setRoot(GrowthCalculatorPage);
   }
   ClickToSimulator(){
-    this.navCtrl.push(SimulatorPage);
+    this.navCtrl.setRoot(SimulatorPage);
   }
   ClickToCoinComparson(){
-    this.navCtrl.push(CoinComparisonPage);
+    this.navCtrl.setRoot(CoinComparisonPage);
   }
   ClickToMarketPrices(){
     this.navCtrl.push(MarketPricesPage);

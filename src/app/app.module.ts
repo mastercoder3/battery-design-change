@@ -25,6 +25,7 @@ import { ApiServiceProvider } from '../providers/api-service/api-service';
 import { DecimalPipe } from '@angular/common';
 import {MillionPipe} from './../million';
 import { HelperProvider } from '../providers/helper/helper';
+import { AnimationService, AnimatesDirective } from 'css-animator';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { HelperProvider } from '../providers/helper/helper';
     AccountPage,
     FaqPage,
     ContactPage,
+    AnimatesDirective
   
   ],
   imports: [
@@ -77,7 +79,8 @@ import { HelperProvider } from '../providers/helper/helper';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiServiceProvider,
-    HelperProvider
+    HelperProvider,
+    AnimationService
   ]
 })
 export class AppModule {}
