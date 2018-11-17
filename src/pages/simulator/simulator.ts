@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SimulatorResultPage } from '../simulator-result/simulator-result';
 import { HomePage } from '../home/home';
@@ -8,6 +8,7 @@ import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { getLocaleWeekEndRange } from '@angular/common';
 import { HelperProvider } from '../../providers/helper/helper';
+import { AnimationBuilder, AnimationService } from 'css-animator';
 
 /**
  * Generated class for the SimulatorPage page.
@@ -24,6 +25,8 @@ import { HelperProvider } from '../../providers/helper/helper';
 export class SimulatorPage {
 
   @ViewChild('slides') slides: Slides;
+  @ViewChild('myelement',{ read: ElementRef }) myElem: ElementRef;
+  @ViewChild('myelement1',{ read: ElementRef }) myElem1: ElementRef;
 
   isShown: boolean;
   isShownLogo: boolean;
@@ -48,11 +51,33 @@ export class SimulatorPage {
   end: boolean =false;
   lock:any;
 
+  private animator: AnimationBuilder;
+  private animator1: AnimationBuilder;
+
   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiServiceProvider, private helper: HelperProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiServiceProvider, private helper: HelperProvider, animationService: AnimationService) {
     this.isShown = true;
     this.isShownLogo = false;
+    this.animator = animationService.builder();
+    this.animator1 = animationService.builder();
+  }
+
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+    this.animator.duration = 2900;
+    this.animator.type = 'flash';
+    this.animator.addAnimationClass('infinite');
+    this.animator.iterationCount=100
+    // this.animator.applyIterationCount(this.myElem.nativeElement,500);
+    this.animator.show(this.myElem.nativeElement);
+  
+ 
+  }
+  clickToStop(){
+    this.animator.stop(this.myElem.nativeElement);
+    
   }
 
   getCoinComparisonName(name){
@@ -89,9 +114,22 @@ export class SimulatorPage {
      if(this.simulator1){
        this.showSlider = true;
        this.showbutton = true;
+       this.animator1.duration = 800;
+       this.animator1.type = 'pulse';
+       this.animator1.addAnimationClass('infinite');
+       this.animator1.iterationCount=200
        this.simulator = false;
        this.isShown = false;
        this.isShownLogo = true;
+       try{
+        setTimeout(() => {
+            // this.animator.applyIterationCount(this.myElem.nativeElement,500);
+              this.animator1.show(this.myElem1.nativeElement);
+              }, 100);
+       }
+       catch(eeee){
+
+       }
 
       setTimeout( () => {
         this.slides.lockSwipes(true);
@@ -171,13 +209,26 @@ export class SimulatorPage {
 
   inputFocus(){
     this.showButton = true;
+    try{
+      this.animator.stop(this.myElem1.nativeElement);
+    }catch(ee){
+
+}
   }
 
   inputBlur(){
-    if(this.factor !== '')
+    if(this.factor !== ''){
     this.showButton = true;
+    try{
+      this.animator.stop(this.myElem1.nativeElement);
+    }catch(eee){
+
+    }
+    
+    }
     else
-    this.showButton = false
+    this.showButton = false ;
   }
+
 
 }

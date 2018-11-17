@@ -23,6 +23,7 @@ ion-content{
 .input{
     background-color: white;
     border-radius: 20px;
+    border: 2px grey solid;
     
 }
 .btn1-size{
@@ -47,6 +48,8 @@ ion-searchbar{
     }
 }
 
-  
+  .slide{
+      box-shadow: none !important;
+  }
 
 }

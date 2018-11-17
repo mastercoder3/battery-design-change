@@ -100,7 +100,7 @@
                  
                    <ion-col ion-col text-left no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                  
-                      <div class="label1">{{mk.percent_change_24h}}%</div>
+                      <div class="label1" [class.negative]="mk.percent_change_24h < 0" [class.positive]="mk.percent_change_24h > 0" >{{mk.percent_change_24h}}%</div>
                    </ion-col>
             </ion-row>
            </ion-item>

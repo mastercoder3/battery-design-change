@@ -26,7 +26,7 @@
                   </ion-col>
     <ion-col ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <!-- <ion-item class="abc" text-center> -->
-            <ion-searchbar [(ngModel)]="name" *ngIf="isShown" (ngModelChange)="onSearch($event)" name="name" placeholder="Select an altcoin to begin"></ion-searchbar>
+            <ion-searchbar (click)="clickToStop()" #myelement [(ngModel)]="name" *ngIf="isShown" (ngModelChange)="onSearch($event)" name="name" placeholder="Select an altcoin to begin"></ion-searchbar>
             <div *ngIf="isShownLogo" style="height: 60px !important; background-color: white !important; border-radius: 10px;" >
                     <ion-row>
                         <ion-col ion-col text-center no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
@@ -163,7 +163,7 @@
             </button>
         </ion-col>
       <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-          <ion-input class="input" text-center required type="number" (ionFocus)="inputFocus()" (ionBlur)="inputBlur()" style="margin-top:10px" [(ngModel)]="factor"></ion-input>
+          <ion-input class="input"  #myelement1 text-center required type="number" (ionFocus)="inputFocus()" (ionBlur)="inputBlur()" style="margin-top:10px" [(ngModel)]="factor"></ion-input>
       </ion-col>
       <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <button (click)="ClcikToSimulatorResult()" *ngIf="showButton">

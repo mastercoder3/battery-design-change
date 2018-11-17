@@ -42,13 +42,17 @@ export class GrowthCalculatorPage {
 
  
   @ViewChild('myelement',{ read: ElementRef }) myElem: ElementRef;
+  @ViewChild('myelement1',{ read: ElementRef }) myElem1: ElementRef;
+  
   private animator: AnimationBuilder;
+  private animator1: AnimationBuilder;
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private api:ApiServiceProvider, private helper: HelperProvider,animationService: AnimationService) {
     this.isShown = true;
     this.isShownLogo = false;
     this.animator = animationService.builder();
+    this.animator1 = animationService.builder();
  
     
   }
@@ -69,11 +73,8 @@ export class GrowthCalculatorPage {
     this.animator.iterationCount=100
     // this.animator.applyIterationCount(this.myElem.nativeElement,500);
     this.animator.show(this.myElem.nativeElement);
-
-
-   
-
-   
+  
+ 
   }
 
   ionViewDidLoad() {
@@ -98,6 +99,10 @@ export class GrowthCalculatorPage {
 
  
   }
+  clickToStop(){
+    this.animator.stop(this.myElem.nativeElement);
+    
+  }
 
   getGrowthCalculator(name){
 
@@ -112,13 +117,31 @@ export class GrowthCalculatorPage {
      if(this.growthCalculator1){
        this.showCard = true;
        this.showbutton = true;
+    this.animator1.duration = 800;
+    this.animator1.type = 'pulse';
+    this.animator1.addAnimationClass('infinite');
+    this.animator1.iterationCount=200
        this.growthCalculator = false;
        this.isShown = false;
        this.isShownLogo = true;
+       try{
+        setTimeout(() => {
+            // this.animator.applyIterationCount(this.myElem.nativeElement,500);
+              this.animator1.show(this.myElem1.nativeElement);
+              }, 100);
+       }
+       catch(eeee){
+
+       }
+       
      }
       
    })
 
+  }
+
+  inputClick(){
+    //this.animator1.show(this.myElem1.nativeElement);
   }
 
   ClickToResultPage(){
@@ -143,13 +166,26 @@ export class GrowthCalculatorPage {
   }
   inputFocus(){
     this.showButton = true;
+    try{
+          this.animator.stop(this.myElem1.nativeElement);
+    }catch(ee){
+
+    }
+
   }
 
   inputBlur(){
-    if(this.factor !== '')
+    if(this.factor !== ''){
     this.showButton = true;
+    try{
+      this.animator.stop(this.myElem1.nativeElement);
+    }catch(eee){
+
+    }
+    
+    }
     else
-    this.showButton = false
+    this.showButton = false ;
   }
 
 }

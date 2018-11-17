@@ -37,5 +37,12 @@ page-market-prices {
     .table-header{
         background-image: linear-gradient(to right, #BF2C62 0%, #9C3274 51%, #7A3985 100%);
     }
+
+    .negative{
+        color: red !important;
+    }
     
+    .positive{
+        color: green !important;
+    }
 }
