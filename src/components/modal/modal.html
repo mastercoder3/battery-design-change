@@ -1,0 +1,90 @@
+<div class="containerr" *ngIf="!second">
+    <div class="top">
+      <h3>Create Assessment Battery    <i (click)="close()" class="fas fa-times" style="cursor: pointer;" ></i></h3>
+  
+    </div>
+    <br><br>
+    <ion-row style="width: 100%;">
+      <ion-col col-12 class="first">
+        <ion-label>Battery Name</ion-label>
+        <br>
+        <ion-input type="text"></ion-input>
+      </ion-col>
+    </ion-row>
+    <br><br>
+    <ion-row>
+      <ion-col col-12 class="first">
+        <ion-label>Description</ion-label>
+        <br>
+        <ion-input type="text"></ion-input>
+      </ion-col>
+    </ion-row>
+  
+    <h4 class="next" (click)="openNext()">Select Assessments<i class="fa fa-plus-circle"></i></h4>
+  
+    
+  </div>
+
+  <div class="container2" *ngIf="second">
+      <div class="top">
+        <h3><i class="fas fa-long-arrow-alt-left" (click)="back()"></i>Create Assessment for Intake    <i (click)="close()" class="fas fa-times" style="cursor: pointer;" ></i></h3>
+    
+      </div>
+      <br>
+      <ion-searchbar class="search"></ion-searchbar>
+    
+      <div class="Assessment-list">
+        <table>
+          <tr>
+          <td>
+          <h2 class="Assessment-list-h2">EPDS</h2>
+           </td>
+           <td>
+          <p class="Assessment-list-para">-Full Unabbreviated Assessment name here</p>
+         </td>
+         </tr>
+         </table>
+         <hr class="hr">
+         <table>
+             <tr>
+             <td>
+             <h2 class="Assessment-list-h2">Audit</h2>
+              </td>
+              <td>
+             <p class="Assessment-list-para">-Full Unabbreviated Assessment name here</p>
+            </td>
+            </tr>
+            </table>
+            <hr class="hr">
+            <table>
+               <tr>
+               <td>
+               <h2 class="Assessment-list-h2">DASS-42</h2>
+                </td>
+                <td>
+               <p class="Assessment-list-para">-Full Unabbreviated Assessment name here</p>
+              </td>
+              </tr>
+              </table>
+              <hr class="hr">
+              <table>
+                 <tr>
+                 <td>
+                 <h2 class="Assessment-list-h2">PCL-5</h2>
+                  </td>
+                  <td>
+                 <p class="Assessment-list-para">-Full Unabbreviated Assessment name here</p>
+                </td>
+                </tr>
+                </table>
+      
+      </div>
+    
+      <br>
+    
+      <div class="footer">
+        <button ion-button color="success">Create</button>
+      </div>
+    
+      
+    </div>

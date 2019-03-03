@@ -1,124 +1,572 @@
-// http://ionicframework.com/docs/theming/
 
+    ion-header{
+        z-index: 0;
+    }
+    ion-content{
+        background-color: #f4f4f4 !important;
+        width: 100%;
+        display: block;
+    }
+    .leftMenu{
+        width: 27% !important;
+        float: left;
+        .header{
+            width: 100%;
+            height: 100px !important;
+            display: block !important;
+            position: relative;
+            top: 0px;
+        }
+        
+        .topTabs{
+            display: table;
+            width: 100% !important;
+            height: 50px;
+        }
+        
+        .topTabs h3{
+            display: table-cell;
+            width: 50%;
+            background: #244DB0;
+        
+            text-align: center;
+            padding-top: 13px;
+            color: white;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+        
+        .bottomTabs{
+            position: relative;
+            top: -1px;
+            display: table;
+            background: #244DB0;
+            height: 50px !important;
+            max-height: 50px;
+            min-height: 50px;
+            width: 100% !important;
+        }
+        
+        .bottomTabs i{
+            display: table-cell;
+            color: white;
+            padding-left: 30px;
+            font-size: 2.1em;
+        }
+        
+        .bottomTabs h5{
+            display: table-cell;
+            color: white;
+            position: relative;
+            
+            left: 10px;
+            font-weight: 100;
+            letter-spacing: 1px;
+            font-size: 1em;
+            word-wrap: break-word;
+        }
+        
+        .active{
+            background: #4F70BF !important;
+        }
+        
+        .disable{
+            background: #244DB0 !important;
+        }
+        
+        .content{
+            width: 100%;
+            height: 100%;
+        }
+        
+        .menuItem{
+            display: block;
+            position: relative;
+            top: -1px;
+            width: 100% !important;
+            height: 75px !important;
+            border-bottom: 1px rgba(136, 136, 136, 0.2) solid;
+        
+        }
+        
+        .itemHeader{
+            display: inline;
+            word-wrap: break-word;
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            color: #696767;
+            opacity: 0.9;
+            padding-left: 20px; 
+            position: relative;
+            top: 10px;    
+        }
+        
+        .itemPara{
+            display: inline;
+            word-wrap: break-word;
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            color: #696767;
+            opacity: 0.8;
+            padding-left: 20px;
+            position: relative;
+            top: 10px;  
+        }
+        
+        .itemActive{
+            border-left: 4px #0CC3F9 solid;
+           h4{
+            font-weight: bold;
+           }
+        }
+    }
+    .rightContent{
+        width: 73% !important;
+        float: right;
+        .Intake-div{
+            height: 190px;
+            width: 95%;
+            background-color: white;
+            margin-top: 10px;
+            margin-right: auto;
+            margin-left: auto;
+            border-radius: 5px;
+        }
+        .Assessment-list{
+            height: 270px;
+            width: 95%;
+            background-color: white;
+            margin-top: 10px;
+            margin-right: auto;
+            margin-left: auto;
+            border-radius: 5px;
+        }
+        .btn{
+            margin-right: 20px;
+            height: 45px;
+            width: 150px;
+            font-size: 12px;
+            background-color: rgb(99, 214, 99);
+        }
+        @media (min-width: 360px) and (max-width: 374px){
+        .Intake-div{
+            height: 210px;
+            width: 95%;
+            background-color: white;
+            margin-top: 10px;
+            margin-right: auto;
+            margin-left: auto;
+            border-radius: 5px;
+        }
+        .btn{
+            margin-right: 20px;
+            height: 35px;
+            width: 120px;
+            font-size: 12px;
+            background-color: rgb(99, 214, 99);
+        }
+        .Assessment-list{
+            height: 350px;
+            width: 95%;
+            background-color: white;
+            margin-top: 10px;
+            margin-right: auto;
+            margin-left: auto;
+            border-radius: 5px;
+        }
+        }
+        @media (min-width: 375px) and  (max-width: 410px){
+            .Intake-div{
+                height: 208px;
+                width: 95%;
+                background-color: white;
+                margin-top: 10px;
+                margin-right: auto;
+                margin-left: auto;
+                border-radius: 5px;
+            }
+            .btn{
+                margin-right: 20px;
+                height: 35px;
+                width: 120px;
+                font-size: 12px;
+                background-color: rgb(99, 214, 99);
+            }
+            .Assessment-list{
+                height: 350px;
+                width: 95%;
+                background-color: white;
+                margin-top: 10px;
+                margin-right: auto;
+                margin-left: auto;
+                border-radius: 5px;
+            }
+        }
+        @media (min-width: 411px) and (max-width: 440px){
+            .Intake-div{
+                height: 190px;
+                width: 95%;
+                background-color: white;
+                margin-top: 10px;
+                margin-right: auto;
+                margin-left: auto;
+                border-radius: 5px;
+            }
+            .btn{
+                margin-right: 20px;
+                height: 45px;
+                width: 150px;
+                font-size: 12px;
+                background-color: rgb(99, 214, 99);
+            }
+            .Assessment-list{
+                height: 350px;
+                width: 95%;
+                background-color: white;
+                margin-top: 10px;
+                margin-right: auto;
+                margin-left: auto;
+                border-radius: 5px;
+            }
+        }
+        @media (min-width: 320px) and  (max-width: 359px){
+            .Intake-div{
+                height: 225px;
+                width: 95%;
+                background-color: white;
+                margin-top: 10px;
+                margin-right: auto;
+                margin-left: auto;
+                border-radius: 5px;
+            }
+            .btn{
+                margin-right: 20px;
+                height: 35px;
+                width: 120px;
+                font-size: 12px;
+                background-color: rgb(99, 214, 99);
+            }
+            .Assessment-list{
+                height: 350px;
+                width: 95%;
+                background-color: white;
+                margin-top: 10px;
+                margin-right: auto;
+                margin-left: auto;
+                border-radius: 5px;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1024px){
+            .Intake-div{
+                height: 180px;
+                width: 95%;
+                background-color: white;
+                margin-top: 10px;
+                margin-right: auto;
+                margin-left: auto;
+                border-radius: 5px;
+            }
+            .btn{
+                margin-right: 20px;
+                height: 45px;
+                width: 150px;
+                font-size: 12px;
+                background-color: rgb(99, 214, 99);
+            }
+            .Assessment-list{
+                height: 270px;
+                width: 95%;
+                background-color: white;
+                margin-top: 10px;
+                margin-right: auto;
+                margin-left: auto;
+                border-radius: 5px;
+            }
+        }
+        @media (min-width: 1024){
+            .Intake-div{
+                height: 180px;
+                width: 95%;
+                background-color: white;
+                margin-top: 10px;
+                margin-right: auto;
+                margin-left: auto;
+                border-radius: 5px;
+            }
+            .btn{
+                margin-right: 20px;
+                height: 45px;
+                width: 150px;
+                font-size: 12px;
+                background-color: rgb(99, 214, 99);
+            }
+            .Assessment-list{
+                height: 270px;
+                width: 95%;
+                background-color: white;
+                margin-top: 10px;
+                margin-right: auto;
+                margin-left: auto;
+                border-radius: 5px;
+            }
+        }
+        .heading{
+            padding-top:15px;
+            padding-left: 20px;
+            font-weight: bold;
+        }
+        #icon{
+            margin-right:20px;
+            color: grey;
+            font-size: 20px;
+        }
+        .para{
+            padding-left: 20px;
+            font-weight: 100;
+        }
+        .hr{
+            color: black !important;
+            border-top-width: 1px;
+            width: 100%;
+            opacity: 0.5;
+        }
+        .hr2{
+            border:         none;
+            border-left:    1px solid hsla(200, 10%, 50%,100);
+            height:         35px;
+            width:          1px; 
+            opacity: 0.5; 
+        }
+        #icon1{
+            font-size: 15px;
+            margin-right: 5px;
+        }
+        .para1{
+            margin-top:5px;
+        }
+        #icon-para{
+            font-size: 18px;
+            position: relative;
+            top: 2px;
+            margin-right: 3px;
+        }
+        .h2{
+            font-size: 18px;
+            padding-left: 3%;
+            font-weight: bold;
+        }
+        .Assessment-list-h2{
+            font-size: 18px;
+            margin-left: 20px;
+            
+        }
+        .Assessment-list-para{
+            padding-left:10px;
+            padding-top: 6px;
+        }
+    
+    
+       
+    }
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
-ion-content{
-    background: white !important;
-}
-ion-header{
-background: black;
-}
-ion-title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0 90px 1px;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-  }
-  .md{
-  .menu-button{
-    position: absolute;
-    top: 0;
-    left: 70;
-    padding: 0 340px 1px;
-    width: 100%;
-    height: 100%;
-    text-align: right;
-  }
+.rightCreate{
+    width: 73% !important;
+    float: right;
+    .container{
+        width: 100% !important;
+        display: block;
+        margin-top: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        padding-top: 20%;
+    }
+    
+    .container img{
+        width: 120px;
+        height: 120px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .container h4{
+        text-align:  center;
+        color: #888888;
+        font-weight: bold;
+        opacity: 0.8;
+        letter-spacing: 1px;
+    }
+    
+    .container p{
+        text-align: center;
+        color: #888888;
+        font-weight: 100;
+        opacity: 0.8;
+        word-spacing: 2px;
+    }
 }
 
-.item-ios {
-   
-    border: 0px;
-    border-bottom: 0px !important;
-    position: relative;
-    font-size: 1.7rem;
-    font-weight: bold;
-    color: #000;
-    background-color: white;
-    -webkit-transition: background-color 200ms linear;
-    transition: background-color 200ms linear;
-  }
-  .item-ios[detail-push] .item-inner,
-button.item-ios:not([detail-none]) .item-inner,
-a.item-ios:not([detail-none]) .item-inner {
-  background-image: url("");
-  padding-right: 32px;
-  border:0px;
-  
-  background-position: right 14px center;
-  background-position: right calc(14px + constant(safe-area-inset-right)) center;
-  background-position: right calc(14px + env(safe-area-inset-right)) center;
-  background-repeat: no-repeat;
-  background-size: 14px 14px;
-}
-.back-button.show-back-button {
-    display: none;
-}
-.ico{
-    position: relative;
-    top:6%;
-    background-color: #000;
-    color: white;
-    border-radius: 50px;
-    // font-size: 13px;
-}
-.ico1{
-    position: relative;
-    bottom:620%;
-    background-color: #000;
-    color: white;
-    border-radius: 50px;
-    // font-size: 13px;
-}
-.ico2{
-    position: relative;
-    bottom:490%;
-    background-color: #000;
-    color: white;
-    border-radius: 50px;
-    // font-size: 13px;
-}
-.ico3{
-    position: relative;
-    bottom:365%;
-    background-color: #000;
-    color: white;
-    border-radius: 50px;
-    // font-size: 13px;
-}
-.butt{
-    position: relative;
-    left: 46%;
+.containerr{
+        width:100% !important;
+        height: 100%;
+        background: white;
+    
+    .top{
+        position: relative;
+        top: 0px !important;
+        width: 100%;
+        height: 50px;
+        background: #244DB0;
+        display: block;
+    }
+    
+    .top h3{
+        display: inline-block;
+        color: white;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .top > h3 > i{
+        color: white;
+        text-align: right;
+        float: right;
+        font-size: 2em;
+        margin-right: 5px;
+        margin-top: -10px;
+        font-weight: 100;
+        outline: none;
+    }
+    
+    .first{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .first ion-label{
+        color: #888888;
+        opacity: 0.8;
+    }
+    
+    .first ion-input{
+        margin-top: 5px;
+        --background: white;
+        width: 100%;
+        border-radius: 2px;
+        border: 1px rgba(209, 209, 209,0.6) solid;
+    }
+    
+    .next{
+        text-align: right;
+        padding-right: 5%;
+        color: #393939;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .next > i{
+        font-size: 1.5em;
+        position: relative;
+        top: 8px;
+    }
     
 }
-.table-header{
-    font-size: 13px !important;
-}
 
-.btn1-size{
-    font-size: 13px !important;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
-}
-.searchbar-ios{
-    border:0px solid grey;
-    border-radius: 20px;
+.container2{
     
-}
-.slide{
-    height: 200px !important;
+        width:100% !important;
+        height: 100%;
+        background: white !important;
+    
+    
+    .top{
+        position: relative;
+        top: 0px !important;
+        width: 100%;
+        height: 50px;
+        background: #244DB0;
+        display: block;
+    }
+    
+    .top h3{
+        display: inline-block;
+        color: white;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .top > h3  i:first-child{
+        color: white;
+        text-align: left;
+        float: left;
+        font-size: 2em;
+        margin-right: 5px;
+        margin-top: -10px;
+        font-weight: 100;
+        outline: none;
+    }
+    
+    .top > h3  i:last-child{
+        color: white;
+        text-align: right;
+        float: right;
+        font-size: 2em;
+        margin-right: 5px;
+        margin-top: -10px;
+        font-weight: 100;
+        outline: none;
+    }
+    
+    .search{
+        width: 90%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        --background: white;
+        box-shadow: 0;
+        text-align: center;
+    }
+    
+    .Assessment-list{
+        height: 270px;
+        width: 100%;
+        background-color: white;
+        margin-top: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        border-radius: 5px;
+     }
+    
+     .Assessment-list-h2{
+        font-size: 18px;
+        margin-left: 20px;
+     }
+     .Assessment-list-para{
+        padding-left:10px;
+        padding-top: 6px;
+     }
+    
+     hr{
+         width: 100%;
+         border-bottom: 1px rgba(209, 209, 209,0.6) solid;
+     }
+    
+     .footer{
+         height: 60px;
+         width: 100%;
+         border-top: 1px rgba(209, 209, 209,0.6) solid;
+         position: relative;
+         bottom: 0px !important;
+         z-index: 1111;
+     }
+    
+    button{
+        margin-top: 20px;
+        margin-right: 10px;
+        float: right;
+    }
 }

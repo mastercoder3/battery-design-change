@@ -1,0 +1,137 @@
+<ion-content>
+  <div class="leftMenu">
+      <div style="width: 100%; height: 100%">
+          <div class="header">
+            <div class="topTabs">
+              <h3 [class.active]="selected !== 'assessment' " (click)="setTab('assessment')" style="cursor: pointer;">
+                Assessments</h3>
+              <h3 [class.active]="selected !== 'battery' " (click)="setTab('battery')" style="cursor: pointer;">Batteries
+              </h3>
+            </div>
+            <div class="bottomTabs" *ngIf="selected === 'battery' " (click)="assessment()"  >
+                <i class="fas fa-plus-circle" style="cursor: pointer; position:relative; left: 20px; top:5px"></i>
+              <h5 style="cursor: pointer;">Create Assessment Battery</h5>
+            </div>
+            <div class="bottomTabs" *ngIf="selected === 'assessment' ">
+              <i class="fas fa-plus-circle" style="cursor: pointer; position:relative; left: 20px; top:5px"></i>
+              <h5>do something here??</h5>
+            </div>
+          </div>
+          <div [ngSwitch]="selected" class="content">
+            <div *ngSwitchCase="'battery'" class="content">
+                <div id="content">
+                  <!-- Use [class.itemActive] for rest of menu items yourself -->
+                    <div class="menuItem itemActive">
+                      <h4 class="itemHeader">Intake</h4>
+                      <br>
+                      <p class="itemPara">To be administered on 1st presentation</p>
+                    </div>
+                    <div class="menuItem">
+                      <h4 class="itemHeader">Discharge</h4>
+                      <br>
+                      <p class="itemPara">Administered when client exists service</p>
+                    </div>
+                    <div class="menuItem">
+                      <h4 class="itemHeader">Session Review</h4>
+                      <br>
+                      <p class="itemPara">Administered when client exists service</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+    
+        </div>
+  </div>
+  <div class="rightContent">
+      <div class="Intake-div">
+          <table style="width: 100%;">
+              <tr style="width: 100%">
+               <th style="width: 80%; text-align: left">
+             <h1 class="heading">Intake</h1>
+             </th>
+             <th style="width: 20% ;text-align: right">
+                <i id="icon" class="far fa-edit"></i>
+            </th>
+             </tr>
+            </table>
+          <!-- <ion-row style="margin-top:-10px">
+            <p class="para">To be administered on 1st presentation</p>
+            <ion-button class="btn">Administor</ion-button>
+          </ion-row> -->
+          <table style="width: 100%;">
+         
+               <tr style="width: 100%">
+                 <th style="width: 80%; text-align: left">
+                    <p class="para">To be administered on 1st presentation</p>
+                 </th>
+                 <th style="width: 20%">
+                    <button ion-button class="btn"><i id="icon1" class="fas fa-mobile-alt"></i>Administor</button>
+                 </th>
+               </tr>
+          </table>
+          <hr class="hr">
+          <table style="width: 100%;">
+         
+              <tr style="width: 100%">
+                <th style="width: 50%;">
+         
+                   <p class="para1"><i id="icon-para" class="fas fa-envelope"></i>Email</p>
+                </th>
+                <hr class="hr2">
+                <th style="width: 50%">
+                  <p class="para1"><i id="icon-para" class="far fa-clock"></i>Schedule</p>
+                </th>
+              </tr>
+         </table>
+         </div>
+         <br>
+         <h2 class="h2">Intake Assessments</h2>
+         <div class="Assessment-list">
+           <table>
+             <tr>
+             <td>
+             <h2 class="Assessment-list-h2">EPDS</h2>
+              </td>
+              <td>
+             <p class="Assessment-list-para">-Full Unabbreviated Assessment name here</p>
+            </td>
+            </tr>
+            </table>
+            <hr class="hr">
+            <table>
+                <tr>
+                <td>
+                <h2 class="Assessment-list-h2">Audit</h2>
+                 </td>
+                 <td>
+                <p class="Assessment-list-para">-Full Unabbreviated Assessment name here</p>
+               </td>
+               </tr>
+               </table>
+               <hr class="hr">
+               <table>
+                  <tr>
+                  <td>
+                  <h2 class="Assessment-list-h2">DASS-42</h2>
+                   </td>
+                   <td>
+                  <p class="Assessment-list-para">-Full Unabbreviated Assessment name here</p>
+                 </td>
+                 </tr>
+                 </table>
+                 <hr class="hr">
+                 <table>
+                    <tr>
+                    <td>
+                    <h2 class="Assessment-list-h2">PCL-5</h2>
+                     </td>
+                     <td>
+                    <p class="Assessment-list-para">-Full Unabbreviated Assessment name here</p>
+                   </td>
+                   </tr>
+                   </table>
+         
+         </div>
+  </div>
+  
+  </ion-content>

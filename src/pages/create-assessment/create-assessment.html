@@ -1,0 +1,60 @@
+<ion-content>
+  <div class="leftMenu">
+      <div style="width: 100%; height: 100%">
+          <div class="header">
+            <div class="topTabs">
+              <h3 [class.active]="selected !== 'assessment' " (click)="setTab('assessment')" style="cursor: pointer;">
+                Assessments</h3>
+              <h3 [class.active]="selected !== 'battery' " (click)="setTab('battery')" style="cursor: pointer;">Batteries
+              </h3>
+            </div>
+            <div class="bottomTabs" *ngIf="selected === 'battery' "  >
+                <i class="fas fa-plus-circle" style="cursor: pointer; position:relative; left: 20px; top:5px"></i>
+              <h5 style="cursor: pointer;">Create Assessment Battery</h5>
+            </div>
+            <div class="bottomTabs" *ngIf="selected === 'assessment' ">
+              <i class="fas fa-plus-circle" style="cursor: pointer; position:relative; left: 20px; top:5px"></i>
+              <h5>do something here??</h5>
+            </div>
+          </div>
+          <div [ngSwitch]="selected" class="content">
+            <div *ngSwitchCase="'battery'" class="content">
+                <div id="content">
+                  <!-- Use [class.itemActive] for rest of menu items yourself -->
+                    <div class="menuItem itemActive">
+                      <h4 class="itemHeader">Intake</h4>
+                      <br>
+                      <p class="itemPara">To be administered on 1st presentation</p>
+                    </div>
+                    <div class="menuItem">
+                      <h4 class="itemHeader">Discharge</h4>
+                      <br>
+                      <p class="itemPara">Administered when client exists service</p>
+                    </div>
+                    <div class="menuItem">
+                      <h4 class="itemHeader">Session Review</h4>
+                      <br>
+                      <p class="itemPara">Administered when client exists service</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+    
+        </div>
+  </div>
+
+  <div class="rightCreate">
+    <div class="container">
+      <img src="assets/folder-empty.svg" alt="">
+      <!-- <ion-icon src="assets/folder-empty.svg"></ion-icon> -->
+      <h4>Assessment Batteries</h4>
+      <p>An assessment battery is a customised <br>
+      collection of assessments grouped together<br>
+      to save you time.</p>
+      <div text-center style="margin-left: auto; margin-right: auto;">
+          <button ion-button color="success" (click)="presentModal()" >Create</button>
+      </div>
+  
+    </div>
+  </div>
+  </ion-content>

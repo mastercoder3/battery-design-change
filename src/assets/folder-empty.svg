@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="123px" height="93px" viewBox="0 0 123 93" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <g id="03.-Assessments-Tab-Flow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Assessments---batteries---empty" transform="translate(-608.000000, -241.000000)">
+            <g id="Group-4" transform="translate(608.000000, 241.000000)">
+                <path d="M122.6667,62.8333 L122.6667,3.0003 C122.6667,1.3433 121.3237,0.0003 119.6667,0.0003 L85.3337,0.0003 C83.6767,0.0003 82.3337,1.3433 82.3337,3.0003 L82.3337,8.3333 L9.9997,8.3333 C8.3427,8.3333 6.9997,9.6763 6.9997,11.3333 L6.9997,62.8333 L122.6667,62.8333 Z" id="Fill-1" fill="#CECFCF"></path>
+                <polygon id="Fill-3" fill="#DEDFE3" points="99.667 92.6667 118 92.6667 118 18.3337 99.667 18.3337"></polygon>
+                <path d="M111.5,92.6667 L8.747,92.6667 C3.916,92.6667 0,88.7507 0,83.9197 L0,18.6667 C0,17.0097 1.343,15.6667 3,15.6667 L108.5,15.6667 C110.157,15.6667 111.5,17.0097 111.5,18.6667 L111.5,92.6667 Z" id="Fill-5" fill="#DEDFE3"></path>
+                <path d="M117.0833,92.6667 C120.1673,92.6667 122.6663,90.1667 122.6663,87.0837 L122.6663,12.5837 C122.6663,9.4997 120.1673,6.9997 117.0833,6.9997 C113.9993,6.9997 111.5003,9.4997 111.5003,12.5837 L111.5003,87.0837 C111.5003,90.1667 113.9993,92.6667 117.0833,92.6667" id="Fill-6" fill="#CECFCF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

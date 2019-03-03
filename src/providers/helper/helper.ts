@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ToastController, LoadingController } from 'ionic-angular';
+import { ModalComponent } from '../../components/modal/modal';
+import { ModalController } from 'ionic-angular';
 
 /*
   Generated class for the HelperProvider provider.
@@ -10,33 +11,20 @@ import { ToastController, LoadingController } from 'ionic-angular';
 */
 @Injectable()
 export class HelperProvider {
-  
-  loading;
 
-  constructor(private toastCtrl: ToastController, public loadingCtrl: LoadingController ) { }
+  profileModal;
 
-  
-  presentToast(msg) {
-    let toast = this.toastCtrl.create({
-      message: msg,
-      duration: 2000,
-      position: 'bottom'
-    });
-  
-    toast.present();
-  }
-  presentLoadingDefault() {
-    this.loading = this.loadingCtrl.create({
-      content: 'Please wait...'
-    });
-  
-    this.loading.present();
-  
-
+  constructor(public http: HttpClient, private modalCtrl: ModalController) {
+    console.log('Hello HelperProvider Provider');
   }
 
-  closeLoading(){
-    this.loading.dismiss();
+  openModel(){
+    this.profileModal = this.modalCtrl.create(ModalComponent, { image: ''});
+    this.profileModal.present();
+  }
+
+  close(){
+    this.profileModal.dismiss();
   }
 
 }
